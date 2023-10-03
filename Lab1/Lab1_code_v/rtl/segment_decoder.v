@@ -7,7 +7,7 @@ module segment_decoder (
     always @(*)  begin
         case (char)
             4'h0:   decoder = 7'h01;
-            4'h1:   decoder = 7'h1F;
+            4'h1:   decoder = 7'h4F;
             4'h2:   decoder = 7'h12;
             4'h3:   decoder = 7'h06;
             4'h4:   decoder = 7'h4C;

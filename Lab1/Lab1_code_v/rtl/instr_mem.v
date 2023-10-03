@@ -1,24 +1,34 @@
 `timescale 1ns/1ps
 
 module instr_mem
+#
+(	
+	parameter ADDR_NUM = 128,
+	parameter ADDR_WIDTH = $clog2(ADDR_NUM),
+	parameter OUTPUT_WIDTH = 32
+)
 (
 	input clk,
 	input rst_n,
-    input [6:0] instr_addr,
-    output [31:0] out_instr
+	input rd_en,
+    input [ADDR_WIDTH-1:0] instr_addr,
+    output [OUTPUT_WIDTH-1:0] out_instr
 );
 
-reg [31:0] INSTR_MEM [127:0];
-reg [31:0] out_mem;
+reg [OUTPUT_WIDTH-1:0] INSTR_MEM [ADDR_NUM:0];
+reg [OUTPUT_WIDTH-1:0] out_mem;
 
 assign out_instr = out_mem; 
 
 always @(posedge clk or negedge rst_n)	begin
 	if(!rst_n)	begin
-		out_mem <= 32'd0;
+		out_mem <= {(OUTPUT_WIDTH){1'b0}};
 	end
-	else	begin
+	else if(rd_en)	begin
 		out_mem <= INSTR_MEM[instr_addr];
+	end
+	else begin
+		out_mem <= out_mem;
 	end
 end
 //----------------------------------------------------------------
@@ -38,8 +48,8 @@ initial begin
 			INSTR_MEM[9] = 32'hE5820000; 
 			INSTR_MEM[10] = 32'hE5820004; 
 			INSTR_MEM[11] = 32'hEAFFFFFE; 
-			for(i = 12; i < 128; i = i+1) begin 
-				INSTR_MEM[i] = 32'h0; 
+			for(i = 12; i < ADDR_NUM; i = i+1) begin 
+				INSTR_MEM[i] = i; 
 			end
 end
 

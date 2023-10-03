@@ -1,6 +1,6 @@
 module segment_display
 #(
-    parameter ONE_JUMP = 28'd100_000_000
+    parameter CLK_FREQ = 28'd100_000_000
 )
 (
     input clk,
@@ -8,18 +8,23 @@ module segment_display
     input [3:0] num,        // Display which to display
     input [1:0] status,     // status: 0 low speed; 1 mid speed; 2 high speed; 3 pause
     output [7:0] addr,      // Which memory to use
-    // output [7:0] anode,
+    output [7:0] anode,
     output [6:0] cathode,   // Display cathode
     output dp
 );
-    localparam  QUARTER_JUMP = ONE_JUMP / 4;
+    localparam  QUARTER_JUMP = 25_000_000;
 
-    assign dp = 1'd0;   // Don't use dp in this task
+    assign dp = 1'd1;   // Don't use dp in this task
 
-    reg [28:0] clk_count;
+    reg [24:0] clk_count;
     reg [3:0]  valid_count;
     reg valid;
     reg [7:0] addr_cnt;
+
+    assign addr = addr_cnt;
+
+    reg [7:0] anode_reg;
+    assign anode = anode_reg;
 
     segment_decoder u_segment_decoder(
     	.char    (num    ),
@@ -50,16 +55,31 @@ module segment_display
 
     always @(posedge clk or negedge rst_n) begin
         if(!rst_n)  begin
-            clk_count <= 29'd0;
+            clk_count <= 25'd0;
             addr_cnt <= 8'd0;
         end
-        else if(clk_count == ONE_JUMP) begin
-            clk_count <= 29'd0;
-            addr_cnt <= addr_cnt + 1'd1;
+        else if(clk_count == QUARTER_JUMP) begin
+            clk_count <= 25'd0;
+            addr_cnt <= addr_cnt + 1'd1;    // valid
         end
         else    begin
             clk_count <= clk_count + valid;
             addr_cnt <= addr_cnt;
+        end
+    end
+
+    reg [$clog2(10_000_000)-1:0] anode_cnt;
+    always @(posedge clk or negedge rst_n) begin
+        if(!rst_n)  begin
+            anode_reg <= 8'b1111_1110;
+            anode_cnt <= 'd0;
+        end
+        else if(anode_cnt == 250_000)   begin
+            anode_reg <= {anode[6:0], anode[7]};
+            anode_cnt <= 'd0;
+        end
+        else begin
+            anode_cnt <= anode_cnt+1'd1;
         end
     end
 endmodule
