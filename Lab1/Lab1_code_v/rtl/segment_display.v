@@ -12,7 +12,7 @@ module segment_display
     output [6:0] cathode,   // Display cathode
     output dp
 );
-    localparam  QUARTER_JUMP = 25_000_000;
+    localparam  QUARTER_JUMP = CLK_FREQ / 4;
 
     assign dp = 1'd1;   // Don't use dp in this task
 
