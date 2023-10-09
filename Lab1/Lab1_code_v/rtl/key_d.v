@@ -9,7 +9,7 @@ module key_d
     input clk,
     input rst_n,
     input [NUM_KEY-1:0] key,            // key_press[0] BTNU, key_press[1] BTND, key_press[2] BTNC
-    output reg test_led,
+    // output reg test_led,
     output [NUM_KEY-1:0] key_out    
 );
     localparam SCAN_CNT = CLK_FREQ * 20 / 1000 - 1;
@@ -29,12 +29,12 @@ module key_d
         if(!rst_n)  begin
             counter <= {(SCAN_CNT_WIDTH){1'b0}};
             key_prev <= {(NUM_KEY){1'b0}};
-            test_led <= 1'd0;
+            // test_led <= 1'd0;
         end
         else if(key_change) begin
             counter <= {(SCAN_CNT_WIDTH){1'b0}};
             key_prev <= key;
-            test_led <= ~test_led;
+            // test_led <= ~test_led;
         end
         else begin
             if(counter == SCAN_CNT)   begin

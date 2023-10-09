@@ -12,8 +12,8 @@ module top_display_rom
     input rst_n,
     output [7:0] anode,
     output [6:0] cathode,
-    output test_led,
-    output [1:0] st,
+    // output test_led,
+    // output [1:0] st,
     output dp,
     output [7:0] led
 );
@@ -25,7 +25,7 @@ module top_display_rom
     assign led = rom_addr;
     assign rom_out = (rom_addr[7])? out_data : out_instr;
 
-    assign st = status;
+    // assign st = status;
     data_mem 
     #(
         .ADDR_NUM     (128          ),
@@ -66,7 +66,7 @@ module top_display_rom
     	.clk     (clk     ),
         .rst_n   (rst_n   ),
         .key     ({btn_p, btn_spddn, btn_spdup}     ),
-        .test_led(test_led),
+        // .test_led(test_led),
         .key_out (key_check )
     );
     /////////////////////////////////////////////////////////
