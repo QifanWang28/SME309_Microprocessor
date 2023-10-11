@@ -12,8 +12,8 @@ module segment_display
     output [6:0] cathode,   // Display cathode
     output dp
 );
-    localparam  QUARTER_JUMP = CLK_FREQ / 4;
-
+    localparam  QUARTER_JUMP = CLK_FREQ / 4 - 1;
+    localparam  ANODE_JUMP = CLK_FREQ / 400 - 1;
     assign dp = 1'd1;   // Don't use dp in this task
 
     reg [24:0] clk_count;
@@ -68,13 +68,13 @@ module segment_display
         end
     end
 
-    reg [$clog2(10_000_000)-1:0] anode_cnt;
+    reg [$clog2(ANODE_JUMP)-1:0] anode_cnt;
     always @(posedge clk or negedge rst_n) begin
         if(!rst_n)  begin
             anode_reg <= 8'b1111_1110;
             anode_cnt <= 'd0;
         end
-        else if(anode_cnt == 250_000)   begin
+        else if(anode_cnt == ANODE_JUMP)   begin
             anode_reg <= {anode[6:0], anode[7]};
             anode_cnt <= 'd0;
         end

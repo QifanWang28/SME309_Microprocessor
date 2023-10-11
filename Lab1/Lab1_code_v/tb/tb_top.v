@@ -4,7 +4,7 @@ module tb_top_display_rom;
 
 // top_display_rom Parameters
 parameter PERIOD    = 10;
-parameter CLK_FREQ  = 500;
+parameter CLK_FREQ  = 400;
 
 // top_display_rom Inputs
 reg   btn_p                                = 0 ;
@@ -16,8 +16,6 @@ reg   rst_n                                = 0 ;
 // top_display_rom Outputs
 wire  [7:0]  anode                         ;
 wire  [6:0]  cathode                       ;
-wire  test_led                             ;
-wire  [1:0]  st                            ;
 wire  dp                                   ;
 wire  [7:0]  led                           ;
 
@@ -43,18 +41,19 @@ top_display_rom #(
 
     .anode                   ( anode      [7:0] ),
     .cathode                 ( cathode    [6:0] ),
-    .test_led                ( test_led         ),
-    .st                      ( st         [1:0] ),
     .dp                      ( dp               ),
     .led                     ( led        [7:0] )
 );
 
 initial
 begin
-    #20 btn_p = 1;
-    #1000 btn_p = 0; btn_spdup = 1;
-    #500 btn_spdup = 0; btn_spddn = 1;
-    #1000   btn_spddn = 1;
+    #20     btn_p = 1;
+    #1000    btn_p = 0;
+    #1000    btn_p = 1;
+    #100    btn_p = 0;
+    #1000   btn_spdup = 1;
+    #2000    btn_spdup = 0; btn_spddn = 1;
+    #2000   btn_spddn = 0;
     #1000 
     $finish;
 end

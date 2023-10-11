@@ -12,8 +12,6 @@ module top_display_rom
     input rst_n,
     output [7:0] anode,
     output [6:0] cathode,
-    // output test_led,
-    // output [1:0] st,
     output dp,
     output [7:0] led
 );
