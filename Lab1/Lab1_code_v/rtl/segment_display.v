@@ -13,7 +13,7 @@ module segment_display
     output dp
 );
     localparam  QUARTER_JUMP = CLK_FREQ / 4 - 1;
-    localparam  ANODE_JUMP = CLK_FREQ / 400 - 1;
+    localparam  ANODE_JUMP = CLK_FREQ / 1000 - 1;
     assign dp = 1'd1;   // Don't use dp in this task
 
     reg [24:0] clk_count;

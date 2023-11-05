@@ -14,7 +14,7 @@ module key_d
 );
     localparam SCAN_CNT = CLK_FREQ * 20 / 1000 - 1;
     localparam SCAN_CNT_WIDTH = $clog2(SCAN_CNT);
-				  
+
     reg [SCAN_CNT_WIDTH-1:0] counter; 
     reg [NUM_KEY-1:0] key_prev;
     reg [NUM_KEY-1:0] key_status;

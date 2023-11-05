@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Wrapper_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Wrapper_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
+      <Cursor1Time time="206124000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="101"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/Wrapper_tb/DIP" type="array">
+      <obj_property name="ElementShortName">DIP[6:0]</obj_property>
+      <obj_property name="ObjectShortName">DIP[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/LED" type="array">
+      <obj_property name="ElementShortName">LED[15:0]</obj_property>
+      <obj_property name="ObjectShortName">LED[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/SEVENSEGHEX" type="array">
+      <obj_property name="ElementShortName">SEVENSEGHEX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SEVENSEGHEX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/wrapper1/ARM1/RF1/RegBank" type="array">
+      <obj_property name="ElementShortName">RegBank[0:15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegBank[0:15][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/wrapper1/ARM1/Instr" type="array">
+      <obj_property name="ElementShortName">Instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instr[31:0]</obj_property>
+   </wvobject>
+</wave_config>
