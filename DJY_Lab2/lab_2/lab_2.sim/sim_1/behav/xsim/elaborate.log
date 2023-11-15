@@ -1,0 +1,31 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav

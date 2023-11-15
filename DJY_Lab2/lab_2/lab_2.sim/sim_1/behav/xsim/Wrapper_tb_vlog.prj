@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../Design_Source/ALU.v" \
+"../../../../../Design_Source/ARM.v" \
+"../../../../../Design_Source/CondLogic.v" \
+"../../../../../Design_Source/ControlUnit.v" \
+"../../../../../Design_Source/Decoder.v" \
+"../../../../../Design_Source/Extend.v" \
+"../../../../../Design_Source/ProgramCounter.v" \
+"../../../../../Design_Source/RegisterFile.v" \
+"../../../../../Design_Source/Shifter.v" \
+"../../../../../Design_Source/Wrapper.v" \
+"../../../../../../Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

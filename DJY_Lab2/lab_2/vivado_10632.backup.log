@@ -1,0 +1,1464 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  7 23:32:15 2023
+# Process ID: 10632
+# Current directory: E:/Code/SME309_Lab/DJY_Lab2/lab_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10528 E:\Code\SME309_Lab\DJY_Lab2\lab_2\lab_2.xpr
+# Log file: E:/Code/SME309_Lab/DJY_Lab2/lab_2/vivado.log
+# Journal file: E:/Code/SME309_Lab/DJY_Lab2/lab_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.xpr
+INFO: [Project 1-313] Project file moved from 'D:/SUSTECHER/vivadoProject/lab_2' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ALU.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ALU.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ARM.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Extend.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Extend.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Constraint_Source/TOP.xdc', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Constraint_Source/TOP.xdc'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v', nor could it be found using path 'D:/SUSTECHER/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [Project 1-230] Project 'lab_2.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 814.758 ; gain = 182.082
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse {E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/TOP_Nexys4.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ALU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ARM.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Extend.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v] -no_script -reset -force -quiet
+remove_files  {E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ALU.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ARM.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Extend.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v}
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v
+update_compile_order -fileset sim_1
+set_property top Wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:74]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Wrapper_tb_behav -key {Behavioral:sim_1:Functional:Wrapper_tb} -tclbatch {Wrapper_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source Wrapper_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Wrapper_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 894.969 ; gain = 17.281
+set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.saif_all_signals} -value {true} -objects [get_filesets sim_1]
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:74]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:81]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 933.551 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:74]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:81]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Wrapper_tb_behav -key {Behavioral:sim_1:Functional:Wrapper_tb} -tclbatch {Wrapper_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source Wrapper_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Wrapper_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 970.211 ; gain = 0.000
+load_feature simulator
+open_wave_database {E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/sim_model/Wrapper_tb_behav.wdb}
+add_wave {{/Wrapper_tb/DIP}} 
+current_wave_config {Untitled 3}
+Untitled 3
+add_wave {{/Wrapper_tb/wrapper1/RESET}} {{/Wrapper_tb/wrapper1/CLK}} {{/Wrapper_tb/wrapper1/PC}} {{/Wrapper_tb/wrapper1/Instr}} 
+current_wave_config {Untitled 3}
+Untitled 3
+add_wave {{/Wrapper_tb/RESET}} {{/Wrapper_tb/CLK}} {{/Wrapper_tb/LED}} {{/Wrapper_tb/SEVENSEGHEX}} 
+current_sim simulation_2
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/RegBank}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/Instr}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUResult}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_A}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_B}} 
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:74]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:48]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'NoWrite' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:50]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUControl' [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:81]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 104. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1035.535 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALUControl}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1046.352 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ReadData}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MemtoReg}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/WD3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/WE3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/RegWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Instr}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Instr}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/CondEx}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/Cond}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1047.305 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/PC}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MenWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/MemW}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/MemW}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/CondEx}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/MemWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MenWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/MemWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MemtoReg}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MenWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MemWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/WD3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/WriteData}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1064.125 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_A}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_B}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUResult}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1064.125 ; gain = 0.000
+current_sim simulation_3
+add_wave {{/Wrapper_tb/RESET}} {{/Wrapper_tb/CLK}} {{/Wrapper_tb/LED}} {{/Wrapper_tb/SEVENSEGHEX}} 
+current_wave_config {Untitled 4}
+Untitled 4
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RF1/RegBank}} 
+current_sim simulation_2
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ProgramCounter1/PCSrc}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ProgramCounter1/Result}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALUResult}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ReadData}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_A}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_B}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ExtImm}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/Extend1/ImmSrc}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/Extend1/InstrImm}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/Extend1/ExtImm}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1126.234 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1136.531 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1136.531 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUControl}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/NoWrite}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3283] element index 27 into 'ALUOp' is out of bounds [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1351.039 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3283] element index 27 into 'ALUOp' is out of bounds [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1351.039 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUOp}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3283] element index 27 into 'ALUOp' is out of bounds [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1351.039 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3283] element index 27 into 'ALUOp' is out of bounds [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1351.039 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3283] element index 27 into 'ALUOp' is out of bounds [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1351.039 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/NoWrite}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/Instr}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim'
+"xelab -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto d6060775d6854427b94df8d51de071da --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3283] element index 27 into 'ALUOp' is out of bounds [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v:32]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" Line 1. Module ARM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" Line 1. Module CondLogic doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" Line 1. Module Extend doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" Line 1. Module Shifter doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.CondLogic
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Extend
+Compiling module xil_defaultlib.Shifter
+Compiling module xil_defaultlib.ARM
+Compiling module xil_defaultlib.Wrapper
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1351.039 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/NoWrite}} 
+current_sim simulation_3
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  8 01:37:26 2023...

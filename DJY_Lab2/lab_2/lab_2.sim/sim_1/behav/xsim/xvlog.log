@@ -1,0 +1,24 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ARM
+WARNING: [VRFC 10-3380] identifier 'RD2' is used before its declaration [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v:12]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CondLogic
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2458] undeclared symbol PCS, assumed default net type wire [E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Extend
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Wrapper_tb

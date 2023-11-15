@@ -1,0 +1,16 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v,1698936298,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v,,ALU,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v,1699427602,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v,,ARM,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v,1699428205,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v,,CondLogic,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v,1698912516,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v,,ControlUnit,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v,1699427314,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v,,Decoder,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v,1699377067,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v,,Extend,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v,1698934194,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v,,ProgramCounter,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v,1698935640,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v,,RegisterFile,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v,1698919452,verilog,,E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v,,Shifter,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v,1697190110,verilog,,E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v,,Wrapper,,,,,,,,
+E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.sim/sim_1/behav/xsim/glbl.v,1513215260,verilog,,,,glbl,,,,,,,,
+E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v,1697185188,verilog,,,,Wrapper_tb,,,,,,,,

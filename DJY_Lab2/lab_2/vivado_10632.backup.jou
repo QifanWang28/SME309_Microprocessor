@@ -1,0 +1,203 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  7 23:32:15 2023
+# Process ID: 10632
+# Current directory: E:/Code/SME309_Lab/DJY_Lab2/lab_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10528 E:\Code\SME309_Lab\DJY_Lab2\lab_2\lab_2.xpr
+# Log file: E:/Code/SME309_Lab/DJY_Lab2/lab_2/vivado.log
+# Journal file: E:/Code/SME309_Lab/DJY_Lab2/lab_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -norecurse {E:/Code/SME309_Lab/DJY_Lab2/Design_Source/RegisterFile.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Decoder.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/TOP_Nexys4.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ARM.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Extend.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ProgramCounter.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/CondLogic.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Shifter.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/Wrapper.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ALU.v E:/Code/SME309_Lab/DJY_Lab2/Design_Source/ControlUnit.v}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ALU.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ARM.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Extend.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v] -no_script -reset -force -quiet
+remove_files  {E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ALU.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ARM.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Extend.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v E:/Code/SME309_Lab/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v}
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/Hardware/Simulation_Source/Wrapper_tb.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source Wrapper_tb.tcl
+set_property -name {xsim.simulate.log_all_signals} -value {true} -objects [get_filesets sim_1]
+set_property -name {xsim.simulate.saif_all_signals} -value {true} -objects [get_filesets sim_1]
+relaunch_sim
+close_sim
+launch_simulation
+source Wrapper_tb.tcl
+load_feature simulator
+open_wave_database {E:/Code/SME309_Lab/Lab2/SME309_Lab2_Template/sim_model/Wrapper_tb_behav.wdb}
+add_wave {{/Wrapper_tb/DIP}} 
+current_wave_config {Untitled 3}
+add_wave {{/Wrapper_tb/wrapper1/RESET}} {{/Wrapper_tb/wrapper1/CLK}} {{/Wrapper_tb/wrapper1/PC}} {{/Wrapper_tb/wrapper1/Instr}} 
+current_wave_config {Untitled 3}
+add_wave {{/Wrapper_tb/RESET}} {{/Wrapper_tb/CLK}} {{/Wrapper_tb/LED}} {{/Wrapper_tb/SEVENSEGHEX}} 
+current_sim simulation_2
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/RegBank}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/Instr}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUResult}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_A}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_B}} 
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALUControl}} 
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ReadData}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MemtoReg}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/WD3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/WE3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/RegWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Instr}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Instr}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/CondEx}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/Cond}} 
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/PC}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MenWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/MemW}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/MemW}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/CondEx}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/MemWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MenWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/MemWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MemtoReg}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MenWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/MemWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/WD3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/WriteData}} 
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_A}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_B}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUResult}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} 
+relaunch_sim
+current_sim simulation_3
+add_wave {{/Wrapper_tb/RESET}} {{/Wrapper_tb/CLK}} {{/Wrapper_tb/LED}} {{/Wrapper_tb/SEVENSEGHEX}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RF1/RegBank}} 
+current_sim simulation_2
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ProgramCounter1/PCSrc}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ProgramCounter1/Result}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALUResult}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ReadData}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_A}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/Src_B}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ExtImm}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/Extend1/ImmSrc}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/Extend1/InstrImm}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/Extend1/ExtImm}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/NoWrite}} 
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUOp}} 
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/NoWrite}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/Instr}} 
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/NoWrite}} 
+current_sim simulation_3
+close_sim
+close_sim

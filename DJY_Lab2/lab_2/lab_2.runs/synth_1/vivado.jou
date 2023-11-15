@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Nov  4 14:51:27 2023
+# Process ID: 23420
+# Current directory: D:/SUSTECHER/vivadoProject/lab_2/lab_2.runs/synth_1
+# Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+# Log file: D:/SUSTECHER/vivadoProject/lab_2/lab_2.runs/synth_1/TOP.vds
+# Journal file: D:/SUSTECHER/vivadoProject/lab_2/lab_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source TOP.tcl -notrace

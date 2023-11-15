@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/ALU.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/ARM.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/Decoder.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/Extend.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/Shifter.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v" \
+"../../../../../../SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

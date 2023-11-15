@@ -24,11 +24,11 @@ module ALU(
 
     assign ALUFlags = {N, Z, C, V};
     
-    wire[31:0] SUM_B = (ALUControl == `SUB) ? ~Src_B + 1'b1:Src_B;
+    wire[31:0] SUM_B = (ALUControl[0]) ? ~Src_B : Src_B;
     always @(*) begin
         case(ALUControl)
             2'b00:  {Cout, ALUResult} = Src_A + SUM_B;
-            2'b01:  {Cout, ALUResult} = Src_A + SUM_B;
+            2'b01:  {Cout, ALUResult} = Src_A + SUM_B + 1'b1;
             2'b10:  ALUResult = Src_A & Src_B;
             2'b11:  ALUResult = Src_A | Src_B;
             default: ALUResult = 32'd0;

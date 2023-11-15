@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov  8 11:56:45 2023
+# Process ID: 2344
+# Current directory: E:/Code/SME309_Lab/DJY_Lab2/lab_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18424 E:\Code\SME309_Lab\DJY_Lab2\lab_2\lab_2.xpr
+# Log file: E:/Code/SME309_Lab/DJY_Lab2/lab_2/vivado.log
+# Journal file: E:/Code/SME309_Lab/DJY_Lab2/lab_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Code/SME309_Lab/DJY_Lab2/lab_2/lab_2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source Wrapper_tb.tcl
+add_wave {{/Wrapper_tb/RESET}} {{/Wrapper_tb/CLK}} {{/Wrapper_tb/LED}} {{/Wrapper_tb/SEVENSEGHEX}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/RegBank}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/NoWrite}} 
+relaunch_sim
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/Instr}} 
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A1}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A2}} {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/A3}} 
+relaunch_sim
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUControl}} 
+current_wave_config {Untitled 2}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/ALUOp}} 
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source Wrapper_tb.tcl
+current_wave_config {Untitled 3}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/NoWrite}} 
+relaunch_sim
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Decoder1/NoWrite}} 
+relaunch_sim
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/RegisterFile1/RegBank}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/Z}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ALU1/ALUFlags}} 
+relaunch_sim
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/ALUFlags}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/CondEx}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/N}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/N}} {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/Z}} {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/C}} {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/V}} 
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/CondLogic1/FlagWrite}} 
+relaunch_sim
+current_wave_config {Untitled 4}
+add_wave {{/Wrapper_tb/wrapper1/ARM1/ControlUnit1/Cond}} 
+relaunch_sim
+relaunch_sim
+close_sim

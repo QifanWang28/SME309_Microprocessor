@@ -1,0 +1,554 @@
+
+*** Running vivado
+    with args -log TOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source TOP.tcl -notrace
+Command: synth_design -top TOP -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6024 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 347.395 ; gain = 103.957
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'TOP' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v:3]
+	Parameter N_LEDs_OUT bound to: 16 - type: integer 
+	Parameter N_DIPs bound to: 7 - type: integer 
+	Parameter N_SEVEN_SEG_DIGITs bound to: 8 - type: integer 
+	Parameter CLK_DIV_BITS bound to: 25 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'Wrapper' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v:4]
+	Parameter N_LEDs bound to: 16 - type: integer 
+	Parameter N_DIPs bound to: 7 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'ARM' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:1]
+INFO: [Synth 8-638] synthesizing module 'ProgramCounter' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v:1]
+INFO: [Synth 8-256] done synthesizing module 'ProgramCounter' (1#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ProgramCounter.v:1]
+INFO: [Synth 8-638] synthesizing module 'RegisterFile' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v:1]
+INFO: [Synth 8-256] done synthesizing module 'RegisterFile' (2#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/RegisterFile.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'A3' does not match port width (4) of module 'RegisterFile' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:57]
+INFO: [Synth 8-638] synthesizing module 'ControlUnit' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v:1]
+INFO: [Synth 8-638] synthesizing module 'CondLogic' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v:1]
+INFO: [Synth 8-256] done synthesizing module 'CondLogic' (3#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/CondLogic.v:1]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (4#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v:1]
+INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (5#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ControlUnit.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'ALUControl' does not match port width (2) of module 'ControlUnit' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:73]
+WARNING: [Synth 8-350] instance 'ControlUnit1' of module 'ControlUnit' requires 11 connections, but only 10 given [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:64]
+INFO: [Synth 8-638] synthesizing module 'ALU' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ALU.v:1]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (6#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ALU.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'ALUControl' does not match port width (2) of module 'ALU' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:80]
+INFO: [Synth 8-638] synthesizing module 'Extend' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Extend.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Extend.v:9]
+INFO: [Synth 8-256] done synthesizing module 'Extend' (7#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Extend.v:1]
+INFO: [Synth 8-638] synthesizing module 'Shifter' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v:1]
+INFO: [Synth 8-226] default block is never used [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v:38]
+INFO: [Synth 8-256] done synthesizing module 'Shifter' (8#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Shifter.v:1]
+WARNING: [Synth 8-3848] Net WriteData in module/entity ARM does not have driver. [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:10]
+INFO: [Synth 8-256] done synthesizing module 'ARM' (9#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Wrapper' (10#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Wrapper.v:4]
+INFO: [Synth 8-256] done synthesizing module 'TOP' (11#1) [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v:3]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[31]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[30]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[29]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[28]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[19]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[18]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[17]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[16]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[11]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[10]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[9]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[8]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[7]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[6]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[5]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[4]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[3]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[2]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[1]
+WARNING: [Synth 8-3331] design Decoder has unconnected port Instr[0]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[31]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[30]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[29]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[28]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[27]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[26]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[25]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[24]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[23]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[22]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[21]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[20]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[19]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[18]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[17]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[16]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[15]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[14]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[13]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[12]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[11]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[10]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[9]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[8]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[7]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[6]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[5]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[4]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[3]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[2]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[1]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 399.902 ; gain = 156.465
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin ControlUnit1:ALUFlags[3] to constant 0 [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:64]
+WARNING: [Synth 8-3295] tying undriven pin ControlUnit1:ALUFlags[2] to constant 0 [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:64]
+WARNING: [Synth 8-3295] tying undriven pin ControlUnit1:ALUFlags[1] to constant 0 [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:64]
+WARNING: [Synth 8-3295] tying undriven pin ControlUnit1:ALUFlags[0] to constant 0 [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/ARM.v:64]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 399.902 ; gain = 156.465
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Constraint_Source/TOP.xdc]
+Finished Parsing XDC File [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Constraint_Source/TOP.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Constraint_Source/TOP.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TOP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 747.355 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 747.355 ; gain = 503.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 747.355 ; gain = 503.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 747.355 ; gain = 503.918
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "ALUControl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ALUOp" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "FlagW" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "INSTR_MEM" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DATA_CONST_MEM" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "seven_seg_enable" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element clk_counter_reg was removed.  [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v:49]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUControl_reg' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v:68]
+WARNING: [Synth 8-327] inferring latch for variable 'FlagW_reg' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Decoder.v:91]
+WARNING: [Synth 8-327] inferring latch for variable 'ExtImm_reg' [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/Extend.v:11]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 747.355 ; gain = 503.918
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
+	   3 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 34    
+	   4 Input     32 Bit        Muxes := 2     
+	 129 Input     32 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   9 Input      4 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module TOP 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module ProgramCounter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module RegisterFile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module CondLogic 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                1 Bit    Registers := 4     
+Module Decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   6 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+	   3 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+Module Extend 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module Shifter 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 20    
+	   4 Input     32 Bit        Muxes := 1     
+Module ARM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+Module Wrapper 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	 129 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "seven_seg_enable" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element clk_counter_reg was removed.  [D:/SUSTECHER/SME309_Lab2_Template/Hardware/Design_Source/TOP_Nexys4.v:49]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[31]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[30]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[29]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[28]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[27]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[26]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[25]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[24]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[23]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[22]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[21]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[20]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[19]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[18]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[17]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[16]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[15]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[14]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[13]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[12]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[11]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[10]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[9]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[8]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[7]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[6]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[5]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[4]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[3]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[2]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[1]
+WARNING: [Synth 8-3331] design ARM has unconnected port WriteData[0]
+INFO: [Synth 8-3886] merging instance 'wrapper1/ARM1/Extend1/ExtImm_reg[31]' (LD) to 'wrapper1/ARM1/Extend1/ExtImm_reg[30]'
+INFO: [Synth 8-3886] merging instance 'wrapper1/ARM1/Extend1/ExtImm_reg[30]' (LD) to 'wrapper1/ARM1/Extend1/ExtImm_reg[29]'
+INFO: [Synth 8-3886] merging instance 'wrapper1/ARM1/Extend1/ExtImm_reg[29]' (LD) to 'wrapper1/ARM1/Extend1/ExtImm_reg[28]'
+INFO: [Synth 8-3886] merging instance 'wrapper1/ARM1/Extend1/ExtImm_reg[25]' (LD) to 'wrapper1/ARM1/Extend1/ExtImm_reg[26]'
+INFO: [Synth 8-3886] merging instance 'wrapper1/ARM1/Extend1/ExtImm_reg[27]' (LD) to 'wrapper1/ARM1/Extend1/ExtImm_reg[28]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\wrapper1/ARM1/Extend1/ExtImm_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\wrapper1/ARM1/ControlUnit1/CondLogic1/N_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\wrapper1/ARM1/ControlUnit1/CondLogic1/Z_reg )
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/Decoder1/ALUControl_reg[1]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/Decoder1/FlagW_reg[1]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/Extend1/ExtImm_reg[28]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/CondLogic1/Z_reg) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/CondLogic1/N_reg) is unused and will be removed from module TOP.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 747.355 ; gain = 503.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-----------------------------------------+-----------+----------------------+------------------+
+|Module Name | RTL Object                              | Inference | Size (Depth x Width) | Primitives       | 
++------------+-----------------------------------------+-----------+----------------------+------------------+
+|TOP         | wrapper1/ARM1/RegisterFile1/RegBank_reg | Implied   | 2 x 32               | RAM32M x 12      | 
+|TOP         | wrapper1/DATA_VAR_MEM_reg               | Implied   | 128 x 32             | RAM128X1D x 32   | 
++------------+-----------------------------------------+-----------+----------------------+------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 780.215 ; gain = 536.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 781.105 ; gain = 537.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+-----------------------------------------+-----------+----------------------+------------------+
+|Module Name | RTL Object                              | Inference | Size (Depth x Width) | Primitives       | 
++------------+-----------------------------------------+-----------+----------------------+------------------+
+|TOP         | wrapper1/ARM1/RegisterFile1/RegBank_reg | Implied   | 2 x 32               | RAM32M x 12      | 
+|TOP         | wrapper1/DATA_VAR_MEM_reg               | Implied   | 128 x 32             | RAM128X1D x 32   | 
++------------+-----------------------------------------+-----------+----------------------+------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/Decoder1/FlagW_reg[0]) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/CondLogic1/C_reg) is unused and will be removed from module TOP.
+WARNING: [Synth 8-3332] Sequential element (wrapper1/ARM1/ControlUnit1/CondLogic1/V_reg) is unused and will be removed from module TOP.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |    35|
+|3     |LUT1      |    14|
+|4     |LUT2      |    34|
+|5     |LUT3      |   133|
+|6     |LUT4      |    73|
+|7     |LUT5      |   166|
+|8     |LUT6      |   382|
+|9     |RAM128X1D |    32|
+|10    |RAM32M    |    12|
+|11    |FDCE      |   131|
+|12    |FDPE      |     9|
+|13    |LD        |    27|
+|14    |IBUF      |    10|
+|15    |OBUF      |    31|
++------+----------+------+
+
+Report Instance Areas: 
++------+----------------------+---------------+------+
+|      |Instance              |Module         |Cells |
++------+----------------------+---------------+------+
+|1     |top                   |               |  1091|
+|2     |  wrapper1            |Wrapper        |   934|
+|3     |    ARM1              |ARM            |   831|
+|4     |      ALU1            |ALU            |    63|
+|5     |      ControlUnit1    |ControlUnit    |     1|
+|6     |        Decoder1      |Decoder        |     1|
+|7     |      Extend1         |Extend         |    26|
+|8     |      ProgramCounter1 |ProgramCounter |   728|
+|9     |      RegisterFile1   |RegisterFile   |    12|
++------+----------------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 45 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 837.145 ; gain = 246.254
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 837.145 ; gain = 593.707
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 116 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 71 instances were transformed.
+  LD => LDCE: 27 instances
+  RAM128X1D => RAM128X1D (RAMD64E, RAMD64E, MUXF7, MUXF7, RAMD64E, RAMD64E): 32 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+51 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 837.145 ; gain = 606.766
+INFO: [Common 17-1381] The checkpoint 'D:/SUSTECHER/vivadoProject/lab_2/lab_2.runs/synth_1/TOP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 837.145 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  4 14:52:01 2023...
