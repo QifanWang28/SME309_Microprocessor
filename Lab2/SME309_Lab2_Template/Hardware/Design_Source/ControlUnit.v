@@ -10,7 +10,12 @@ module ControlUnit(
     output RegWrite,
     output [1:0] RegSrc,
     output [1:0] ALUControl,	
-    output PCSrc
+    output PCSrc,
+
+    input done,
+    output M_Start,
+    output MCycleOp,
+    output MWrite
     ); 
     
     wire [3:0] Cond;
@@ -34,17 +39,23 @@ module ControlUnit(
      MemWrite
     );
 
-    Decoder Decoder1(
-     Instr,
-     PCS,
-     RegW,
-     MemW,
-     MemtoReg,
-     ALUSrc,
-     ImmSrc,
-     RegSrc,
-     ALUControl,
-     FlagW,
-     NoWrite
+    Decoder u_Decoder(
+    	.Instr      (Instr      ),
+        .PCS        (PCS        ),
+        .RegW       (RegW       ),
+        .MemW       (MemW       ),
+        .MemtoReg   (MemtoReg   ),
+        .ALUSrc     (ALUSrc     ),
+        .ImmSrc     (ImmSrc     ),
+        .RegSrc     (RegSrc     ),
+        .ALUControl (ALUControl ),
+        .FlagW      (FlagW      ),
+        .NoWrite    (NoWrite    ),
+
+        .done       (done       ),
+        .M_Start    (M_Start    ),
+        .MCycleOp   (MCycleOp   ),
+        .MWrite     (MWrite     )
     );
+    
 endmodule

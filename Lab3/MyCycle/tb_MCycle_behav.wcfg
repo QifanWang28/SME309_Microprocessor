@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:\Desktop\TeachingAssistant\vivadoStudy\Practice\project_4\project_4.sim\sim_1\behav\xsim\tb_MCycle_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_MCycle" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="621345408fs"></ZoomEndTime>
+      <Cursor1Time time="600000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="85"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/tb_MCycle/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/Start" type="logic">
+      <obj_property name="ElementShortName">Start</obj_property>
+      <obj_property name="ObjectShortName">Start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycleOp" type="logic">
+      <obj_property name="ElementShortName">MCycleOp</obj_property>
+      <obj_property name="ObjectShortName">MCycleOp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/Operand1" type="array">
+      <obj_property name="ElementShortName">Operand1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Operand1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/Operand2" type="array">
+      <obj_property name="ElementShortName">Operand2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Operand2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/Result" type="array">
+      <obj_property name="ElementShortName">Result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/Busy" type="logic">
+      <obj_property name="ElementShortName">Busy</obj_property>
+      <obj_property name="ObjectShortName">Busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/width" type="array">
+      <obj_property name="ElementShortName">width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">width[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/period" type="array">
+      <obj_property name="ElementShortName">period[31:0]</obj_property>
+      <obj_property name="ObjectShortName">period[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/n_state" type="logic">
+      <obj_property name="ElementShortName">n_state</obj_property>
+      <obj_property name="ObjectShortName">n_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/count" type="array">
+      <obj_property name="ElementShortName">count[5:0]</obj_property>
+      <obj_property name="ObjectShortName">count[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/temp_sum" type="array">
+      <obj_property name="ElementShortName">temp_sum[63:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_sum[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/Operand_reg" type="array">
+      <obj_property name="ElementShortName">Operand_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Operand_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/sign_extend" type="logic">
+      <obj_property name="ElementShortName">sign_extend</obj_property>
+      <obj_property name="ObjectShortName">sign_extend</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_MCycle/MCycle1/subres" type="array">
+      <obj_property name="ElementShortName">subres[31:0]</obj_property>
+      <obj_property name="ObjectShortName">subres[31:0]</obj_property>
+   </wvobject>
+</wave_config>
