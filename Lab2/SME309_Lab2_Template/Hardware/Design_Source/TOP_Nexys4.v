@@ -4,7 +4,7 @@ module TOP#(
 	parameter N_LEDs_OUT = 16,        // Number of LEDs displaying Result. LED(15 downto 15-N_LEDs_OUT+1). 16 by default
 	parameter N_DIPs = 7,             // Number of DIPs. 16 by default
 	parameter N_SEVEN_SEG_DIGITs = 8, // Number of digits on the 7-seg display.
-  parameter CLK_DIV_BITS = 25        // Set this to 26 for a ~1Hz clock. 0 for a 100MHz clock. Should not exceed 26. 
+  parameter CLK_DIV_BITS = 22        // Set this to 26 for a ~1Hz clock. 0 for a 100MHz clock. Should not exceed 26. 
   // There is no need to change it for simulation, as this entity/module should not be simulated
   // If this is set to less than 17, you might need a software delay loop between successive reads / writes to/from UART.
 )

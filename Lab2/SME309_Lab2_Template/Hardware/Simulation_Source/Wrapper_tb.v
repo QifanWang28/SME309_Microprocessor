@@ -12,6 +12,10 @@ initial begin
   RESET = 1;
   #10
   RESET = 0;
+  #2000
+  RESET = 1;
+  #10
+  RESET = 0;
   #8000
   $finish;
 end
