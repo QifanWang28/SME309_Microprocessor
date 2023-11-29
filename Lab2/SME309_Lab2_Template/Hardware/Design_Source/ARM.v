@@ -69,10 +69,10 @@ module ARM(
 
     RegisterFile u_RegisterFile(
     	.CLK (CLK ),
-        .WE3 (RegWrite ),
+        .WE3 (RegWrite&(~Busy) ),
         .A1  (RA1  ),
         .A2  (RA2  ),
-        .A3  (Instr[15:12]  ),
+        .A3  (RA3  ),
         .WD3 (Result ),
         .R15 (PC_Plus_4 + 3'd4),
         .RD1 (Src_A ),
@@ -115,8 +115,8 @@ module ARM(
         .RESET    (Reset    ),
         .Start    (Start    ),
         .MCycleOp (MCycleOp ),
-        .Operand1 (R1 ),
-        .Operand2 (R2 ),
+        .Operand1 (Src_A ),
+        .Operand2 (RD2 ),
         .Result   (MCycle_result   ),
         .Busy     (Busy     )
     );

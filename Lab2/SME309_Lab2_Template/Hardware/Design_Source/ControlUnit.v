@@ -8,7 +8,7 @@ module ControlUnit(
     output ALUSrc,
     output [1:0] ImmSrc,
     output RegWrite,
-    output [1:0] RegSrc,
+    output [2:0] RegSrc,
     output [1:0] ALUControl,	
     output PCSrc,
 
@@ -21,6 +21,7 @@ module ControlUnit(
     wire [3:0] Cond;
     wire PCS, RegW, MemW;
     wire [1:0] FlagW;
+    wire CondEx;
 
     assign Cond=Instr[31:28];
 
@@ -33,6 +34,7 @@ module ControlUnit(
      Cond,
      ALUFlags,
      NoWrite,
+     CondEx,
 
      PCSrc,
      RegWrite,
@@ -52,6 +54,8 @@ module ControlUnit(
         .FlagW      (FlagW      ),
         .NoWrite    (NoWrite    ),
 
+        .CondEx     (CondEx     ),
+        
         .done       (done       ),
         .M_Start    (M_Start    ),
         .MCycleOp   (MCycleOp   ),

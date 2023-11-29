@@ -8,6 +8,8 @@ module CondLogic(
     input [3:0] ALUFlags,
     input NoWrite,
 
+    output CondEx,
+    
     output PCSrc,
     output RegWrite,
     output MemWrite

@@ -11,7 +11,7 @@ module MCycle
     input [WIDTH-1:0] Operand1, // Multiplicand / Dividend
     input [WIDTH-1:0] Operand2, // Multiplier / Divisor
     output [WIDTH-1:0] Result,  //For MUL, assign the lower-32bits result; For DIV, assign the quotient.
-    output reg Busy // Set immediately when Start is set. Cleared when the Results become ready. This bit can be used to stall the processor while multi-cycle operations are on.
+    output reg Busy = 1'b0 // Set immediately when Start is set. Cleared when the Results become ready. This bit can be used to stall the processor while multi-cycle operations are on.
 );
 
     localparam IDLE = 1'b0;
