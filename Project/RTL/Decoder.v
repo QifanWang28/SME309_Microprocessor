@@ -12,8 +12,6 @@ module Decoder(
     output reg [1:0] FlagW,
     output reg NoWrite,
 
-    input CondEx,
-
     input done,
     output reg M_Start,
     output reg MCycleOp,
@@ -35,10 +33,10 @@ module Decoder(
         case(op)
             2'b00:  begin
                 if(Instr[25]==0 && Instr[7:4] == 4'b1001 && Instr[24:21] == 4'b0000)    begin
-                    RegSrc[2] = CondEx;
-                    MWrite = done;
+                    RegSrc[2] = 1'b1;
+                    MWrite = done;                  
                     MCycleOp = 1'b0;
-                    M_Start = CondEx;
+                    M_Start = 1'b1;
                 end
                 else begin
                     RegSrc[2] = 1'b0;
@@ -49,10 +47,10 @@ module Decoder(
             end
             2'b01:  begin
                 if(Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111)  begin
-                    RegSrc[2] = CondEx;
+                    RegSrc[2] = 1'b1;
                     MWrite = done;
                     MCycleOp = 1'b1;
-                    M_Start = CondEx;
+                    M_Start = 1'b1;
                 end
                 else begin
                     RegSrc[2] = 1'b0;

@@ -8,6 +8,8 @@ module CondLogic(
     input [3:0] ALUFlags,
     input NoWrite,
 
+    input rst,
+
     output CondEx,
     
     output PCSrc,
@@ -21,9 +23,14 @@ module CondLogic(
     reg Z = 0;
     reg V = 0;
     
-    always @(posedge CLK) begin
-        if(FlagW[1] & CondEx) {N, Z} <= ALUFlags[3:2];
-        if(FlagW[0] & CondEx) {C, V} <= ALUFlags[1:0];
+    always @(posedge CLK or negedge rst) begin
+        if(rst)  begin
+            {N, Z, C, V} <= 4'b0000;
+        end
+        else    begin
+            if(FlagW[1] & CondEx) {N, Z} <= ALUFlags[3:2];
+            if(FlagW[0] & CondEx) {C, V} <= ALUFlags[1:0];    
+        end
     end
 
     always @(*) begin

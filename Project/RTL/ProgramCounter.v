@@ -3,7 +3,7 @@ module ProgramCounter(
     input Reset,
     input PCSrc,
     input [31:0] Result,
-    input Busy,
+    input Stall,
 
     output reg [31:0] PC,
     output [31:0] PC_Plus_4
@@ -18,7 +18,7 @@ always @(posedge CLK or posedge Reset) begin
         PC <= 32'd0;
     end
     else begin
-        if(Busy)    begin
+        if(Stall)    begin
             PC <= PC;
         end
         else begin

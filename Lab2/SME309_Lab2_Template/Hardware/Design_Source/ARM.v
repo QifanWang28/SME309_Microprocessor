@@ -41,10 +41,12 @@ module ARM(
     wire MCycleOp;
     wire MWrite;
     wire Start;
+    
     ControlUnit u_ControlUnit(
     	.Instr      (Instr      ),
         .ALUFlags   (ALUFlags   ),
         .CLK        (CLK        ),
+        .rst        (Reset      ),
         .MemtoReg   (MemtoReg   ),
         .MemWrite   (MemWrite   ),
         .ALUSrc     (ALUSrc     ),

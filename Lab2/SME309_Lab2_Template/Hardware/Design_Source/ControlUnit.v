@@ -2,6 +2,7 @@ module ControlUnit(
     input [31:0] Instr,
     input [3:0] ALUFlags,
     input CLK,
+    input rst,
 
     output MemtoReg,
     output MemWrite,
@@ -34,6 +35,8 @@ module ControlUnit(
      Cond,
      ALUFlags,
      NoWrite,
+     rst,
+
      CondEx,
 
      PCSrc,
