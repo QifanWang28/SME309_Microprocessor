@@ -12,13 +12,17 @@ module RegisterM2W_Data (
     output [31:0] RD_W,
     output [31:0] ALUOut_W,
     output [3:0] A3_addrW,
-    output MemtoRegW
+    output MemtoRegW,
+
+    input BusyM,
+    output BusyW
 );
 
     reg [31:0] RD_reg;
     reg [31:0] ALUOut_reg;
     reg [3:0] A3_addr_reg;
     reg MemtoReg_reg;
+    reg Busy_reg;
 
     always @(posedge clk or posedge rst_p)  begin
         if(rst_p)   begin
@@ -26,6 +30,7 @@ module RegisterM2W_Data (
             ALUOut_reg <= 32'd0;
             A3_addr_reg <= 4'd0; 
             MemtoReg_reg <= 1'b0;
+            Busy_reg <= 1'b0;
         end
         // else if(refresh)    begin
         //     RD_reg <= 32'd0;
@@ -38,12 +43,14 @@ module RegisterM2W_Data (
             ALUOut_reg <= ALUOut_reg;
             A3_addr_reg <= A3_addr_reg;
             MemtoReg_reg <= MemtoReg_reg;
+            Busy_reg <= Busy_reg;
         end
         else    begin
             RD_reg <= RD_M;
             ALUOut_reg <= ALUOut_M;
             A3_addr_reg <= A3_addrM;
             MemtoReg_reg <= MemtoRegM; 
+            Busy_reg <= BusyM;
         end
     end
 
@@ -51,4 +58,5 @@ module RegisterM2W_Data (
     assign ALUOut_W = ALUOut_reg;
     assign A3_addrW = A3_addr_reg;
     assign MemtoRegW = MemtoReg_reg;
+    assign BusyW = Busy_reg;
 endmodule

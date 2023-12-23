@@ -7,6 +7,9 @@ module ControlUnit(
     input refresh_D2E,
     // input refresh_E2M,
     // input refresh_M2W,
+    input StallE,
+    input StallM,
+    input StallW,
 
     output MemtoReg,
     output MemWrite,
@@ -29,7 +32,7 @@ module ControlUnit(
     
     wire [3:0] Cond;
     wire PCS, RegW, MemW;
-    wire [1:0] FlagW;
+    wire [1:0] FlagW;   // Watch out
     wire CondEx;
 
     assign Cond = Instr[31:28];
@@ -37,9 +40,8 @@ module ControlUnit(
     wire PCSE;
     wire RegWE;
     wire MemWE;
-    wire FlagWE;
+    wire [1:0] FlagWE;  // Watch out
     wire [1:0] ALUControlE;
-    wire MemtoRegE;
     wire ALUSrcE;
     wire [3:0] CondE;
     wire doneE;
@@ -50,10 +52,9 @@ module ControlUnit(
     wire NoWriteD;
     wire NoWriteE;  
     
-    wire M_StartS;
+    wire M_StartD;
 
     wire PCSrcE;
-    wire RegWriteE;
     wire MemWriteE;
 
     wire MemtoRegD;
@@ -77,7 +78,7 @@ module ControlUnit(
         .NoWrite    (NoWriteD    ),
         
         .done       (done       ),
-        .M_Start    (M_StartS   ),
+        .M_Start    (M_StartD   ),
         .MCycleOp   (MCycleOpD   ),
         .MWrite     (MWriteD     )
     );
@@ -86,6 +87,7 @@ module ControlUnit(
     	.clk         (CLK         ),
         .rst_p       (Reset       ),
         .refresh     (refresh_D2E ),
+        .Stall       (StallE),
 
         .PCSD        (PCS        ),
         .RegWD       (RegW       ),
@@ -106,7 +108,7 @@ module ControlUnit(
         .CondE       (CondE       ),
 
         .doneD       (done        ),    // There can be a forward signal
-        .M_StartD    (M_StartS    ),
+        .M_StartD    (M_StartD    ),
         .MCycleOpD   (MCycleOpD    ),
         .MWriteD     (MWriteD     ),
   
@@ -118,24 +120,46 @@ module ControlUnit(
         .NoWriteE    (NoWriteE     )
     );
     
-    CondLogic CondLogic1(
-        CLK,
-        PCSE,
+    // CondLogic CondLogic1(
+    //     CLK,
+    //     PCSE,
 
-        RegWE,
-        MemWE,
-        FlagWE,
-        CondE,
-        ALUFlags,
-        NoWriteE,
-        M_StartE,
+    //     RegWE,
+    //     MemWE,
+    //     FlagWE,
+    //     CondE,
+    //     ALUFlags,
+    //     NoWriteE,
+    //     M_StartE,
 
-        PCSrcE,
-        RegWriteE,
-        MemWriteE,
+    //     PCSrcE,
+    //     RegWriteE,
+    //     MemWriteE,
 
-        M_Start
+    //     M_Start
+    // );
+
+    CondLogic u_CondLogic(
+    	.CLK      (CLK      ),
+        .PCS      (PCSE      ),
+        .RegW     (RegWE     ),
+        .MemW     (MemWE     ),
+        .FlagW    (FlagWE    ),
+        .Cond     (CondE     ),
+        .ALUFlags (ALUFlags ),
+        .NoWrite  (NoWriteE  ),
+        .M_StartS (M_StartE ),
+        .PCSrc    (PCSrcE    ),
+        .RegWrite (RegWriteE ),
+        .MemWrite (MemWriteE ),
+        .M_Start  (M_Start  ),
+        .MWriteE  (MWriteE  ),
+        .MWrite   (MWrite   )
     );
+    
+
+
+
 
     wire PCSrcM;
     wire RegWriteM;
@@ -147,12 +171,13 @@ module ControlUnit(
     	.clk       (CLK         ),
         .rst_p     (Reset       ),
         // .refresh   (refresh_E2M ),
+        .Stall       (StallM),
 
         .PCSrcE    (PCSrcE      ),
         .RegWriteE (RegWriteE   ),
         .MemWriteE (MemWriteE   ),
         .MemtoRegE (MemtoRegE   ),
-        .MWriteE     (MWriteE     ),
+        .MWriteE   (MWrite     ),
 
         .PCSrcM    (PCSrcM    ),
         .RegWriteM (RegWriteM ),
@@ -169,7 +194,8 @@ module ControlUnit(
     RegisterM2W_Cond u_RegisterM2W_Cond(
         .clk       (CLK       ),
         .rst_p     (Reset     ),
-        // .refresh   (refresh_M2W   ),
+        // .refresh   (refresh_M2),
+        .Stall       (StallW),
 
         .PCsrcM    (PCsrcM    ),
         .RegWriteM (RegWriteM ),
@@ -189,7 +215,6 @@ module ControlUnit(
     assign ALUControl = ALUControlE;
     assign PCSrc = PCSrcE;
 
-    assign M_Start = M_Start;
-    assign MWrite = MWriteE;
+    // assign MWrite = MWriteE;
     assign MCycleOp = MCycleOpE;
 endmodule

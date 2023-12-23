@@ -17,12 +17,12 @@ module ARM(
     wire RegWrite;
     
     wire [31:0] ResultW;
-    assign ResultW = MemtoRegW ? RD_W : ALUOut_W;
+    wire [31:0] RD_W;
 
     wire [31:0] ALUResult;
 
     // First layer F layer
-    wire [31:0] PC, PC_Plus_4;
+    wire [31:0] PC_Plus_4;
     wire refresh_F2D;
     wire StallF;
 
@@ -79,29 +79,41 @@ module ARM(
     wire [1:0] ForwardAE, ForwardBE;
 
     wire [31:0] ALUM_A, ALUM_B;
-    assign ALUM_A = (ForwardAE == 2'b10)? ALUResultM:(ForwardAE == 2'b01)? ResultW : RD1_E;
-    assign ALUM_B = (ForwardBE == 2'b10)? ALUResultM:(ForwardBE == 2'b01)? ResultW : RD2_E;
+
+    // wire StallE;
+
     // Forth layer M layer
     wire MemtoRegM;
 
     wire [31:0] ALUResultM;
-    wire [31:0] WriteDataM;
-    wire [31:0] A3_addrM;
 
-    assign WriteData = WriteDataM;
+    assign ALUM_A = (ForwardAE == 2'b10)? ALUResultM:(ForwardAE == 2'b01)? ResultW : RD1_E;
+    assign ALUM_B = (ForwardBE == 2'b10)? ALUResultM:(ForwardBE == 2'b01)? ResultW : RD2_E; // E layer
+
+    wire [31:0] WriteDataM;
+    wire [3:0] A3_addrM;
+
+    assign WriteData =  ForwardM ? ResultW :WriteDataM;
 
     wire [3:0] RA2_M;
     wire MemWriteM;
 
     wire ForwardM;
-    assign o_ALUResult = ForwardM ? ResultW : ALUResultM;
+    assign o_ALUResult = ALUResultM;
+
+    wire BusyM;
+    // wire StallM;
+    
+    wire RegWriteM;
     // Fifth layer W layer
     wire MemtoRegW;
-    wire [31:0] RD_W;
+    
     wire [31:0] ALUOut_W;
     wire [3:0] A3_addrW;
+    wire BusyW;
+    // wire StallW;
 
-    
+    assign ResultW = MemtoRegW ? RD_W : ALUOut_W;
     // Module
     // Cross layer
     ControlUnit u_ControlUnit(
@@ -112,6 +124,10 @@ module ARM(
         .Reset      (Reset      ),
 
         .refresh_D2E(refresh_D2E),
+
+        .StallE     (Busy),
+        .StallM     (),
+        .StallW     (),
 
         .MemtoReg   (MemtoRegW   ),
         .MemWrite   (MemWrite   ),
@@ -172,7 +188,7 @@ module ARM(
 
         .PCSrc     (PCSrc     ),
         .Result    (ALUResult ),
-        .Stall     (Busy      ),
+        .Stall     (Busy | StallF    ),
 
         .PC        (PC        ),
         .PC_Plus_4 (PC_Plus_4 )
@@ -183,7 +199,7 @@ module ARM(
         .rst_p   (Reset   ),
 
         .refresh (refresh_F2D ),
-        .Stall   (StallF),
+        .Stall   (StallD | Busy),
 
         .InstrF  (Instr  ),
         .InstrD  (InstrD  )
@@ -192,10 +208,10 @@ module ARM(
     // D layer
     RegisterFile u_RegisterFile(
     	.CLK (~CLK ),
-        .WE3 (RegWrite&(~Busy) ),
+        .WE3 (RegWrite & ~(BusyW)),
         .A1  (RA1  ),
         .A2  (RA2  ),
-        .A3  (RA3  ),
+        .A3  (A3_addrW  ),
         .WD3 (ResultW ),
         .R15 (PC_Plus_4),
         .RD1 (Src_A ),
@@ -209,29 +225,31 @@ module ARM(
     );
 
     RegisterD2E_Data u_RegisterD2E_Data(
-    	.clk       (clk         ),
-        .rst_p     (rst_p       ),
+    	.clk       (CLK         ),
+        .rst_p     (Reset      ),
         .refresh   (refresh_D2E ),
-        .Stall     (StallD      ),
+        .Stall     (Busy      ),
 
         .RA1_D     (RA1       ),
         .RA2_D     (RA2       ),
+
         .RD1_D     (Src_A     ),
         .RD2_D     (RD2       ),
+
         .Extend_D  (ExtImm    ),
         .A3_addrD  (RA3       ),
 
-        .Sh_D       (Instr[6:5]),
-        .Shamt5_D   (Instr[11:7]),
+        .Sh_D       (InstrD[6:5]),
+        .Shamt5_D   (InstrD[11:7]),
 
         .RA1_E      (RA1_E      ),
         .RA2_E      (RA2_E      ),
+
         .RD1_E      (RD1_E     ),
         .RD2_E      (RD2_E     ),
+
         .Extend_E   (Extend_E  ),
         .A3_addrE   (A3_addrE ),
-
-        .RA2_M      (RA2_M),
 
         .Sh_E       (Sh_E),
         .Shamt5_E   (Shamt5_E)
@@ -272,22 +290,30 @@ module ARM(
     ResgisterE2M_Data u_ResgisterE2M_Data(
     	.clk        (CLK        ),
         .rst_p      (Reset      ),
+        .Stall      (     ),
 
         .ALUResultE (ALUResult_Chosen),
-        .WriteDataE (RD2_E       ),          
+        .WriteDataE (ALUM_B       ),          
         .A3_addrE   (A3_addrE   ),
         .MemtoRegE  (MemtoRegE),
 
         .ALUResultM (ALUResultM ),
         .WriteDataM (WriteDataM ),
         .A3_addrM   (A3_addrM   ),
-        .MemtoRegM  (MemtoRegM)
+        .MemtoRegM  (MemtoRegM),
+
+        .RA2_E(RA2_E),
+        .RA2_M(RA2_M),
+
+        .BusyE (Busy),
+        .BusyM (BusyM)
     );
 
     // M layer
     RegisterM2W_Data u_RegisterM2W_Data(
     	.clk       (CLK         ),
         .rst_p     (Reset       ),
+        .Stall      (    ),
 
         .RD_M      (ReadData    ),
         .ALUOut_M  (ALUResultM  ),
@@ -297,7 +323,10 @@ module ARM(
         .RD_W      (RD_W      ),
         .ALUOut_W  (ALUOut_W  ),
         .A3_addrW   (A3_addrW ),
-        .MemtoRegW  (MemtoRegW)
+        .MemtoRegW  (MemtoRegW),
+
+        .BusyM      (BusyM),
+        .BusyW      (BusyW)
     );
     
 endmodule

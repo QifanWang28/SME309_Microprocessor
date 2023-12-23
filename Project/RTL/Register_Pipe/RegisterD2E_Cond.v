@@ -3,11 +3,12 @@ module RegisterD2E_Cond
     input clk,
     input rst_p,
     input refresh,
+    input Stall,
 
     input PCSD,
     input RegWD,
     input MemWD,
-    input FlagWD,
+    input [1:0] FlagWD,
     input [1:0] ALUControlD,
     input MemtoRegD,
     input ALUSrcD,
@@ -16,7 +17,7 @@ module RegisterD2E_Cond
     output PCSE,
     output RegWE,
     output MemWE,
-    output FlagWE,
+    output [1:0] FlagWE,
     output [1:0] ALUControlE,
     output MemtoRegE,
     output ALUSrcE,
@@ -33,9 +34,9 @@ module RegisterD2E_Cond
     output MWriteE,
 
     input NoWriteD,
-    output NoWriteE,
+    output NoWriteE
 
-    input Stall
+
     // input [31:0] RD1_D,
     // input [31:0] RD2_D,
     // input [31:0] Extend_D,
@@ -50,7 +51,7 @@ module RegisterD2E_Cond
     reg PCS_reg;
     reg RegW_reg;
     reg MemW_reg;
-    reg FlagW_reg;
+    reg [1:0] FlagW_reg;
     reg [1:0] ALUControl_reg;
     reg MemtoReg_reg;
     reg ALUSrc_reg;
@@ -72,7 +73,7 @@ module RegisterD2E_Cond
             PCS_reg <= 1'd0;
             RegW_reg <= 1'd0;
             MemW_reg <= 1'd0;
-            FlagW_reg <= 1'd0;
+            FlagW_reg <= 2'd0;
             ALUControl_reg <= 2'd0;
             MemtoReg_reg <= 1'd0;
             ALUSrc_reg <= 1'd0;
@@ -93,7 +94,7 @@ module RegisterD2E_Cond
             PCS_reg <= 1'd0;
             RegW_reg <= 1'd0;
             MemW_reg <= 1'd0;
-            FlagW_reg <= 1'd0;
+            FlagW_reg <= 2'd0;
             ALUControl_reg <= 2'd0;
             MemtoReg_reg <= 1'd0;
             ALUSrc_reg <= 1'd0;

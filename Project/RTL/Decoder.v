@@ -67,30 +67,7 @@ module Decoder(
             end
         endcase
     end
-
-    // Main Decoder
-    // always@(*)   begin
-    //     casex({op, funct_I, funct_U, funct_S})
-    //         5'b00_xxx:  begin
-    //             if(Instr[25]==0 && Instr[7:4] == 4'b1001 && Instr[24:21] == 4'b0000)    begin
-    //                 {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp} = 11'b0_0_0_x_xx_1_xx_00;
-    //             end
-    //         end
-    //         5'b00_0_xx:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b0000xx10011;
-    //         5'b00_1_xx:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b0001001x011;
-    //         5'b01_xxx:  begin
-    //             if(Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111)
-    //                 {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp} = 11'b0_0_0_x_xx_1_xx_00;
-    //         end
-    //         5'b01_x_0_0:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b0x110101001;
-    //         5'b01_x_0_1:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b0101011x001;
-    //         5'b01_x_1_0:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b0x110101000;
-    //         5'b01_x_1_1:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b0101011x000;
-
-    //         5'b10_x_xx:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 11'b1001100x100;
-    //         default:    {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}   = 10'h3FF;
-    //     endcase
-    // end
+    
     wire mul_judge = Instr[25]==0 && Instr[7:4] == 4'b1001 && Instr[24:21] == 4'b0000;
     wire div_judge = Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111;
     always@(*)   begin

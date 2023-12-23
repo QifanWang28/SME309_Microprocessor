@@ -7,3 +7,6 @@
 Lab3/MyCycle/xsim.dir/tb_MCycle_behav.wdb/xsimSettings.ini
 /DJY_Lab3/*
 !/DJY_Lab3/Hardware
+/Project/*
+!/Project/RTL
+!/Project/SIMV

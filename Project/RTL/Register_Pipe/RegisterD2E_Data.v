@@ -24,9 +24,8 @@ module RegisterD2E_Data
     output [31:0] Extend_E,
     output [3:0] A3_addrE,
     output [1:0] Sh_E,
-    output [4:0] Shamt5_E,
+    output [4:0] Shamt5_E
 
-    output [3:0] RA2_M
 );
     
     reg [31:0] RD1_reg;
@@ -37,7 +36,7 @@ module RegisterD2E_Data
     reg [1:0] Sh_reg;
     reg [4:0] Shamt5_reg;
 
-    reg [3:0] RA1_reg, RA2_reg, RA2M_reg;
+    reg [3:0] RA1_reg, RA2_reg;
     always @(posedge clk or posedge rst_p) begin
         if(rst_p)   begin
             RD1_reg <= 32'd0;
@@ -48,7 +47,6 @@ module RegisterD2E_Data
             Shamt5_reg <= 5'd0;
             RA1_reg <= 4'd0;
             RA2_reg <= 4'd0;
-            RA2M_reg <= 4'd0;
         end
         else if(refresh)    begin
             RD1_reg <= 32'd0;
@@ -59,7 +57,7 @@ module RegisterD2E_Data
             Shamt5_reg <= 5'd0;
             RA1_reg <= 4'd0;
             RA2_reg <= 4'd0;
-            RA2M_reg <= 4'd0;
+
         end
         else if(Stall)  begin
             RA1_reg <= RA1_reg;
@@ -70,7 +68,6 @@ module RegisterD2E_Data
             A3_addr_reg <= A3_addr_reg;
             Sh_reg <= Sh_reg;
             Shamt5_reg <= Shamt5_reg;
-            RA2M_reg <= RA2M_reg;
         end
         else begin
             RA1_reg <= RA1_D;
@@ -81,7 +78,6 @@ module RegisterD2E_Data
             A3_addr_reg <= A3_addrD;
             Sh_reg <= Sh_D;
             Shamt5_reg <= Shamt5_D;
-            RA2M_reg <= RA1_E;
         end
     end
 

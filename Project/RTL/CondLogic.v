@@ -12,7 +12,11 @@ module CondLogic(
     output PCSrc,
     output RegWrite,
     output MemWrite,
-    output M_Start
+
+    output M_Start,
+
+    input MWriteE,
+    output MWrite
     ); 
     
     reg CondEx;
@@ -50,4 +54,5 @@ module CondLogic(
     assign RegWrite = RegW & CondEx & ~NoWrite;
     assign MemWrite = MemW & CondEx;
     assign M_Start = M_StartS & CondEx;
+    assign MWrite = MWriteE & CondEx;
 endmodule
