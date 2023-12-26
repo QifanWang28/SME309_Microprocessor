@@ -27,7 +27,10 @@ module ControlUnit(
     
     output RegWriteM,
     output RegWriteE,
-    output MemtoRegE
+    output MemtoRegE,
+
+    input MCycle_out_signal,
+    output M_StartD
     ); 
     
     wire [3:0] Cond;
@@ -51,8 +54,6 @@ module ControlUnit(
 
     wire NoWriteD;
     wire NoWriteE;  
-    
-    wire M_StartD;
 
     wire PCSrcE;
     wire MemWriteE;
@@ -83,6 +84,7 @@ module ControlUnit(
         .MWrite     (MWriteD     )
     );
 
+    wire MemtoReg_logic;
     RegisterD2E_Cond u_RegisterD2E_Cond(
     	.clk         (CLK         ),
         .rst_p       (Reset       ),
@@ -103,7 +105,7 @@ module ControlUnit(
         .MemWE       (MemWE       ),
         .FlagWE      (FlagWE      ),
         .ALUControlE (ALUControlE ),
-        .MemtoRegE   (MemtoRegE   ),
+        .MemtoRegE   (MemtoReg_logic   ),
         .ALUSrcE     (ALUSrcE     ),
         .CondE       (CondE       ),
 
@@ -120,25 +122,9 @@ module ControlUnit(
         .NoWriteE    (NoWriteE     )
     );
     
-    // CondLogic CondLogic1(
-    //     CLK,
-    //     PCSE,
-
-    //     RegWE,
-    //     MemWE,
-    //     FlagWE,
-    //     CondE,
-    //     ALUFlags,
-    //     NoWriteE,
-    //     M_StartE,
-
-    //     PCSrcE,
-    //     RegWriteE,
-    //     MemWriteE,
-
-    //     M_Start
-    // );
-
+    wire RegWrite_logic;
+    wire MemWrite_logic;
+    
     CondLogic u_CondLogic(
     	.CLK      (CLK      ),
         .PCS      (PCSE      ),
@@ -150,19 +136,18 @@ module ControlUnit(
         .NoWrite  (NoWriteE  ),
         .M_StartS (M_StartE ),
         .PCSrc    (PCSrcE    ),
-        .RegWrite (RegWriteE ),
-        .MemWrite (MemWriteE ),
+        .RegWrite (RegWrite_logic ),
+        .MemWrite (MemWrite_logic ),
         .M_Start  (M_Start  ),
         .MWriteE  (MWriteE  ),
         .MWrite   (MWrite   )
     );
     
-
-
-
+    assign RegWriteE = MCycle_out_signal ? 1'b1 : RegWrite_logic;
+    assign MemWriteE = MCycle_out_signal ? 1'b0 : MemWrite_logic;
+    assign MemtoRegE = MCycle_out_signal ? 1'b0 : MemtoReg_logic;
 
     wire PCSrcM;
-    wire RegWriteM;
     wire MemWriteM;
     wire MemtoRegM;
     wire MWriteM;
