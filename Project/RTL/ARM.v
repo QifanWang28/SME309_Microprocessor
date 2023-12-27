@@ -4,10 +4,10 @@ module ARM(
     input [31:0] Instr,
     input [31:0] ReadData,
 
-    output MemWrite,
+    output MemWrite2Memory,
     output [31:0] PC,
-    output [31:0] o_ALUResult,
-    output [31:0] WriteData
+    output [31:0] MissAddr,
+    output [31:0] Data2Memory
 ); 
 
     // All wires    
@@ -111,20 +111,27 @@ module ARM(
 
     wire [31:0] WriteDataM;
     wire [3:0] A3_addrM;
-
-    assign WriteData =  ForwardM ? ResultW :WriteDataM;
+    wire [31:0] WriteData;
+    assign WriteData =  ForwardM ? ResultW : WriteDataM;
 
     wire [3:0] RA2_M;
     wire MemWriteM;
 
     wire ForwardM;
-    assign o_ALUResult = ALUResultM;
+    
 
     wire BusyM;
 
+    wire [31:0] o_ALUResult;
+    assign o_ALUResult = ALUResultM;
     // wire StallM;
     
     wire RegWriteM;
+
+    wire [31:0] Data;
+    wire [31:0] Data2Memory;
+    wire Hit;
+    wire MemWrite;
     // Fifth layer W layer
     wire MemtoRegW;
     
@@ -145,9 +152,10 @@ module ARM(
 
         .refresh_D2E(refresh_D2E|MCycle_Stall),
 
-        .StallE     (MCycle_out_signal),
-
-        .MemtoReg   (MemtoRegW   ),
+        .StallE     (MCycle_out_signal|!Hit),
+        .StallM     (!Hit       ),
+        .StallW     (!Hit       ),
+        .MemtoReg   (MemtoRegW  ),
         .MemWrite   (MemWrite   ),
         .ALUSrc     (ALUSrc     ),
         .ImmSrc     (ImmSrc     ),
@@ -216,7 +224,7 @@ module ARM(
         .PCSrc     (PCSrc     ),
         .Result    (ALUResult ),
         // .Stall     (MCycle_out_signal | StallF | MCycle_Stall  ),
-        .Stall     (StallF | MCycle_Stall |MCycle_out_signal ),
+        .Stall     (StallF | MCycle_Stall |MCycle_out_signal | !Hit),
         .PC        (PC        ),
         .PC_Plus_4 (PC_Plus_4 )
     );
@@ -227,7 +235,7 @@ module ARM(
 
         .refresh (refresh_F2D ),
         // .Stall   (StallD | MCycle_out_signal | MCycle_Stall ),
-        .Stall   (StallD | MCycle_Stall |MCycle_out_signal),
+        .Stall   (StallD | MCycle_Stall |MCycle_out_signal| !Hit),
         .InstrF  (Instr  ),
         .InstrD  (InstrD  )
     );
@@ -255,7 +263,7 @@ module ARM(
     	.clk       (CLK         ),
         .rst_p     (Reset      ),
         .refresh   (refresh_D2E |MCycle_Stall),
-        .Stall     (MCycle_out_signal),
+        .Stall     (MCycle_out_signal| !Hit),
 
         .RA1_D     (RA1       ),
         .RA2_D     (RA2       ),
@@ -335,7 +343,7 @@ module ARM(
     ResgisterE2M_Data u_ResgisterE2M_Data(
     	.clk        (CLK        ),
         .rst_p      (Reset      ),
-        // .Stall      ( MCycle_Stall    ),
+        .Stall      (!Hit    ),
 
         .ALUResultE (ALUResult_Chosen),
         .WriteDataE (ALUM_B       ),          
@@ -354,13 +362,32 @@ module ARM(
         .BusyM (BusyM)
     );
 
+    // wire MemWrite2Memory;
+    // wire [31:0] MissAddr;
+
+
     // M layer
+    Cache u_Cache(
+    	.clk             (CLK             ),
+        .Addr            (o_ALUResult     ),
+        .MemWrite        (MemWrite        ),
+
+        .WriteData       (WriteData       ),
+        .Hit             (Hit             ),
+        .Data            (Data            ),
+
+        .MemWrite2Memory (MemWrite2Memory ),
+        .MissAddr        (MissAddr        ),
+        .ReadData        (ReadData        ), 
+        .Data2Memory     (Data2Memory     )
+    );
+    
     RegisterM2W_Data u_RegisterM2W_Data(
     	.clk       (CLK         ),
         .rst_p     (Reset       ),
-        // .Stall      ( MCycle_Stall   ),
+        .Stall      (!Hit   ),
 
-        .RD_M      (ReadData    ),
+        .RD_M      (Data    ),
         .ALUOut_M  (ALUResultM  ),
         .A3_addrM (A3_addrM ),
 

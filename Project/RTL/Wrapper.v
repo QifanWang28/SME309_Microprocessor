@@ -38,9 +38,14 @@ wire [31:0] ReadData_IO;
 //----------------------------------------------------------------
 // Memory declaration
 //-----------------------------------------------------------------
+// reg [31:0] INSTR_MEM		[0:127]; // instruction memory
+// reg [31:0] DATA_CONST_MEM	[0:127]; // data (constant) memory
+// reg [31:0] DATA_VAR_MEM     [0:127]; // data (variable) memory
+
 reg [31:0] INSTR_MEM		[0:127]; // instruction memory
 reg [31:0] DATA_CONST_MEM	[0:127]; // data (constant) memory
-reg [31:0] DATA_VAR_MEM     [0:127]; // data (variable) memory
+reg [31:0] DATA_VAR_MEM     [0:2047]; // data (variable) memory
+
 integer i;
 
 
@@ -212,36 +217,69 @@ initial begin
 			// end
 
 			// Q3
+			// INSTR_MEM[0] = 32'hE59F1204; 
+			// INSTR_MEM[1] = 32'hE59F2204; 
+			// INSTR_MEM[2] = 32'hE59F31F0; 
+			// INSTR_MEM[3] = 32'hE59F41F0; 
+			// INSTR_MEM[4] = 32'hE59FC1F0; 
+			// INSTR_MEM[5] = 32'hE0815002; 
+			// INSTR_MEM[6] = 32'hE2015000; 
+			// INSTR_MEM[7] = 32'hE0216003; 
+			// INSTR_MEM[8] = 32'hE0447003; 
+			// INSTR_MEM[9] = 32'hE0678001; 
+			// INSTR_MEM[10] = 32'hE0875008; 
+			// INSTR_MEM[11] = 32'hE2416006; 
+			// INSTR_MEM[12] = 32'hE0866006; 
+			// INSTR_MEM[13] = 32'hE0A16002; 
+			// INSTR_MEM[14] = 32'hE2416006; 
+			// INSTR_MEM[15] = 32'hE0C27001; 
+			// INSTR_MEM[16] = 32'hE0419002; 
+			// INSTR_MEM[17] = 32'hE0E27001; 
+			// INSTR_MEM[18] = 32'hE3110000; 
+			// INSTR_MEM[19] = 32'hE081A002; 
+			// INSTR_MEM[20] = 32'hE13A000A; 
+			// INSTR_MEM[21] = 32'hE1550006; 
+			// INSTR_MEM[22] = 32'hE2658000; 
+			// INSTR_MEM[23] = 32'hE1750008; 
+			// INSTR_MEM[24] = 32'hE1839001; 
+			// INSTR_MEM[25] = 32'hE1A0C004; 
+			// INSTR_MEM[26] = 32'hE1C4D003; 
+			// INSTR_MEM[27] = 32'hE1E0A002; 
+			// INSTR_MEM[28] = 32'hEAFFFFFE; 
+			// for(i = 29; i < 128; i = i+1) begin 
+			// 	INSTR_MEM[i] = 32'h0; 
+			// end
+
+			// Q4
 			INSTR_MEM[0] = 32'hE59F1204; 
 			INSTR_MEM[1] = 32'hE59F2204; 
 			INSTR_MEM[2] = 32'hE59F31F0; 
 			INSTR_MEM[3] = 32'hE59F41F0; 
 			INSTR_MEM[4] = 32'hE59FC1F0; 
 			INSTR_MEM[5] = 32'hE0815002; 
-			INSTR_MEM[6] = 32'hE2015000; 
-			INSTR_MEM[7] = 32'hE0216003; 
-			INSTR_MEM[8] = 32'hE0447003; 
-			INSTR_MEM[9] = 32'hE0678001; 
-			INSTR_MEM[10] = 32'hE0875008; 
-			INSTR_MEM[11] = 32'hE2416006; 
-			INSTR_MEM[12] = 32'hE0866006; 
-			INSTR_MEM[13] = 32'hE0A16002; 
-			INSTR_MEM[14] = 32'hE2416006; 
-			INSTR_MEM[15] = 32'hE0C27001; 
-			INSTR_MEM[16] = 32'hE0419002; 
-			INSTR_MEM[17] = 32'hE0E27001; 
-			INSTR_MEM[18] = 32'hE3110000; 
-			INSTR_MEM[19] = 32'hE081A002; 
-			INSTR_MEM[20] = 32'hE13A000A; 
-			INSTR_MEM[21] = 32'hE1550006; 
-			INSTR_MEM[22] = 32'hE2658000; 
-			INSTR_MEM[23] = 32'hE1750008; 
-			INSTR_MEM[24] = 32'hE1839001; 
-			INSTR_MEM[25] = 32'hE1A0C004; 
-			INSTR_MEM[26] = 32'hE1C4D003; 
-			INSTR_MEM[27] = 32'hE1E0A002; 
-			INSTR_MEM[28] = 32'hEAFFFFFE; 
-			for(i = 29; i < 128; i = i+1) begin 
+			INSTR_MEM[6] = 32'hE59F61F8; 
+			INSTR_MEM[7] = 32'hE5035004; 
+			INSTR_MEM[8] = 32'hE283300C; 
+			INSTR_MEM[9] = 32'hE5137010; 
+			INSTR_MEM[10] = 32'hE5861000; 
+			INSTR_MEM[11] = 32'hE5862100; 
+			INSTR_MEM[12] = 32'hE5863200; 
+			INSTR_MEM[13] = 32'hE5864300; 
+			INSTR_MEM[14] = 32'hE5865400; 
+			INSTR_MEM[15] = 32'hE586C500; 
+			INSTR_MEM[16] = 32'hE5967000; 
+			INSTR_MEM[17] = 32'hE5968100; 
+			INSTR_MEM[18] = 32'hE5969200; 
+			INSTR_MEM[19] = 32'hE596A300; 
+			INSTR_MEM[20] = 32'hE596B400; 
+			INSTR_MEM[21] = 32'hE596C509; 
+			INSTR_MEM[22] = 32'hEAFFFFFE; 
+
+
+			for(i = 23; i < 128; i = i+1) begin 
+				INSTR_MEM[i] = 32'h0; 
+			end
+			for(i = 23; i < 128; i = i+1) begin 
 				INSTR_MEM[i] = 32'h0; 
 			end
 end
@@ -319,11 +357,11 @@ assign dec_DATA_VAR			= (ALUResult >= 32'h00000800 && ALUResult <= 32'h000009FC)
 //----------------------------------------------------------------
 always@( * ) begin
 if (dec_DATA_VAR)
-	ReadData <= DATA_VAR_MEM[ALUResult[8:2]] ; 
+	ReadData = DATA_VAR_MEM[ALUResult[8:2]] ; 
 else if (dec_DATA_CONST)
-	ReadData <= DATA_CONST_MEM[ALUResult[8:2]] ; 	
+	ReadData = DATA_CONST_MEM[ALUResult[8:2]] ; 	
 else
-	ReadData <= 32'h0 ; 
+	ReadData = 32'h0 ; 
 end
 
 //----------------------------------------------------------------
@@ -336,7 +374,7 @@ assign ReadData_IO = DATA_VAR_MEM[DIP[6:0]];
 //----------------------------------------------------------------
 always@(posedge CLK) begin
     if( MemWrite && dec_DATA_VAR ) 
-        DATA_VAR_MEM[ALUResult[8:2]] <= WriteData ;
+        DATA_VAR_MEM[ALUResult[12:2]] <= WriteData ;
 end
 
 //----------------------------------------------------------------
