@@ -9,7 +9,7 @@ module RegisterD2E_Cond
     input RegWD,
     input MemWD,
     input [1:0] FlagWD,
-    input [1:0] ALUControlD,
+    input [2:0] ALUControlD,
     input MemtoRegD,
     input ALUSrcD,
     input [3:0] CondD,
@@ -18,7 +18,7 @@ module RegisterD2E_Cond
     output RegWE,
     output MemWE,
     output [1:0] FlagWE,
-    output [1:0] ALUControlE,
+    output [2:0] ALUControlE,
     output MemtoRegE,
     output ALUSrcE,
     output [3:0] CondE,
@@ -34,7 +34,16 @@ module RegisterD2E_Cond
     output MWriteE,
 
     input NoWriteD,
-    output NoWriteE
+    output NoWriteE,
+
+    input Carry_useD,
+    input Reverse_BD,
+    input Rev_SrcD,
+
+    output Carry_useE,
+    output Reverse_BE,
+    output Rev_SrcE
+
 
 
     // input [31:0] RD1_D,
@@ -52,7 +61,7 @@ module RegisterD2E_Cond
     reg RegW_reg;
     reg MemW_reg;
     reg [1:0] FlagW_reg;
-    reg [1:0] ALUControl_reg;
+    reg [2:0] ALUControl_reg;
     reg MemtoReg_reg;
     reg ALUSrc_reg;
     reg [3:0] Cond_reg;
@@ -63,6 +72,8 @@ module RegisterD2E_Cond
     reg MWrite_reg;
 
     reg NoWrite_reg;
+
+    reg Carry_use_reg, Reverse_B_reg, Rev_Src_reg;
     // reg [31:0] RD1_reg;
     // reg [31:0] RD2_reg;
     // reg [31:0] Extend_reg;
@@ -85,6 +96,10 @@ module RegisterD2E_Cond
             MWrite_reg <= 1'd0;
 
             NoWrite_reg <= 1'b0;
+
+            Carry_use_reg <= 1'd0;
+            Reverse_B_reg <= 1'd0;
+            Rev_Src_reg <= 1'd0;
             // RD1_reg <= 32'd0;
             // RD2_reg <= 32'd0;
             // Extend_reg <= 32'd0;
@@ -106,6 +121,10 @@ module RegisterD2E_Cond
             MWrite_reg <= 1'd0;
 
             NoWrite_reg <= 1'b0;
+
+            Carry_use_reg <= 1'd0;
+            Reverse_B_reg <= 1'd0;
+            Rev_Src_reg <= 1'd0;
             // RD1_reg <= 32'd0;
             // RD2_reg <= 32'd0;
             // Extend_reg <= 32'd0;
@@ -127,6 +146,10 @@ module RegisterD2E_Cond
             MWrite_reg <= MWrite_reg;
 
             NoWrite_reg <= NoWrite_reg;
+
+            Carry_use_reg <= Carry_use_reg;
+            Reverse_B_reg <= Reverse_B_reg;
+            Rev_Src_reg <= Rev_Src_reg;
         end
         else begin
             PCS_reg <=  PCSD;
@@ -144,6 +167,10 @@ module RegisterD2E_Cond
             MWrite_reg <= MWriteD;
 
             NoWrite_reg <= NoWriteD;
+
+            Carry_use_reg <= Carry_useD;
+            Reverse_B_reg <= Reverse_BD;
+            Rev_Src_reg <= Rev_SrcD;
             // RD1_reg <= RD1_D;
             // RD2_reg <= RD2_D;
             // Extend_reg <= Extend_D;
@@ -166,6 +193,10 @@ module RegisterD2E_Cond
     assign MWriteE = MWrite_reg;
 
     assign NoWriteE = NoWrite_reg;
+
+    assign Carry_useE = Carry_use_reg;
+    assign Reverse_BE = Reverse_B_reg;
+    assign Rev_SrcE = Rev_Src_reg;
     // assign RD1_E = RD1_reg;
     // assign RD2_E = RD2_reg;
     // assign Extend_E = Extend_reg;

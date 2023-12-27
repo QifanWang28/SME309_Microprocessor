@@ -8,10 +8,10 @@ module Shifter(
 
     wire [31:0] LL16, LL8, LL4, LL2, LL1;
     assign LL16 = Shamt5[4] ? {ShIn[0+:16],16'd0}:(ShIn);
-    assign LL8 = Shamt5[3] ? {ShIn[0+:24],8'd0}:(LL16);
-    assign LL4 = Shamt5[2] ? {ShIn[0+:28],4'd0}:(LL8);
-    assign LL2 = Shamt5[1] ? {ShIn[0+:30],2'd0}:(LL4);
-    assign LL1 = Shamt5[0] ? {ShIn[0+:31],1'd0}:(LL2);
+    assign LL8 = Shamt5[3] ? {LL16[0+:24],8'd0}:(LL16);
+    assign LL4 = Shamt5[2] ? {LL8[0+:28],4'd0}:(LL8);
+    assign LL2 = Shamt5[1] ? {LL4[30], LL4[0+:30],2'd0}:(LL4);
+    assign LL1 = Shamt5[0] ? {LL2[31], LL2[0+:31],1'd0}:(LL2);
 
     wire [31:0] LR16, LR8, LR4, LR2, LR1;
     assign LR16 = Shamt5[4] ? {16'd0, ShIn[31-:16]}:(ShIn);

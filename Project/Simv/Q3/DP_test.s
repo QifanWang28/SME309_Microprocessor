@@ -28,7 +28,7 @@
     CMP R5, R6;
     RSB R8, R5, #0;
     CMN R5, R8;
-    ORR R9,R3,R1;
+    ORR R9，R3，R1;
     MOV R12, R4;
     BIC R13, R4, R3;
     MVN R10, R2;

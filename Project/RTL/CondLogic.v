@@ -16,12 +16,14 @@ module CondLogic(
     output M_Start,
 
     input MWriteE,
-    output MWrite
+    output MWrite,
+
+    output reg C = 0
     ); 
     
     reg CondEx;
     reg N = 0;
-    reg C = 0;
+    // reg C = 0;
     reg Z = 0;
     reg V = 0;
     

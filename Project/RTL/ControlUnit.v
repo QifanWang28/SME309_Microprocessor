@@ -17,7 +17,7 @@ module ControlUnit(
     output [1:0] ImmSrc,
     output RegWrite,
     output [2:0] RegSrc,
-    output [1:0] ALUControl,	
+    output [2:0] ALUControl,	
     output PCSrc,
 
     input done,
@@ -30,7 +30,13 @@ module ControlUnit(
     output MemtoRegE,
 
     input MCycle_out_signal,
-    output M_StartD
+    output M_StartD,
+
+    output Carry_use,
+    output Reverse_B,
+    output Rev_Src,
+
+    output C
     ); 
     
     wire [3:0] Cond;
@@ -44,7 +50,7 @@ module ControlUnit(
     wire RegWE;
     wire MemWE;
     wire [1:0] FlagWE;  // Watch out
-    wire [1:0] ALUControlE;
+    wire [2:0] ALUControlE;
     wire ALUSrcE;
     wire [3:0] CondE;
     wire doneE;
@@ -60,10 +66,13 @@ module ControlUnit(
 
     wire MemtoRegD;
     wire ALUSrcD;
-    wire [1:0] ALUControlD;
+    wire [2:0] ALUControlD;
     wire MWriteD;
     wire MCycleOpD;
     
+    wire Carry_useD, Reverse_BD, Rev_SrcD;
+    wire Carry_useE, Reverse_BE, Rev_SrcE;
+
     Decoder u_Decoder(
     	.Instr      (Instr      ),
         .PCS        (PCS        ),
@@ -81,7 +90,11 @@ module ControlUnit(
         .done       (done       ),
         .M_Start    (M_StartD   ),
         .MCycleOp   (MCycleOpD   ),
-        .MWrite     (MWriteD     )
+        .MWrite     (MWriteD     ),
+
+        .Carry_use  (Carry_useD),
+        .Reverse_B  (Reverse_BD),
+        .Rev_Src    (Rev_SrcD)
     );
 
     wire MemtoReg_logic;
@@ -119,7 +132,15 @@ module ControlUnit(
         .MWriteE     (MWriteE     ),
 
         .NoWriteD    (NoWriteD     ),
-        .NoWriteE    (NoWriteE     )
+        .NoWriteE    (NoWriteE     ),
+
+        .Carry_useD  (Carry_useD),
+        .Reverse_BD  (Reverse_BD),
+        .Rev_SrcD    (Rev_SrcD),
+
+        .Carry_useE  (Carry_useE),
+        .Reverse_BE  (Reverse_BE),
+        .Rev_SrcE   (Rev_SrcE)
     );
     
     wire RegWrite_logic;
@@ -140,7 +161,9 @@ module ControlUnit(
         .MemWrite (MemWrite_logic ),
         .M_Start  (M_Start  ),
         .MWriteE  (MWriteE  ),
-        .MWrite   (MWrite   )
+        .MWrite   (MWrite   ),
+
+        .C  (C)
     );
     
     assign RegWriteE = MCycle_out_signal ? 1'b1 : RegWrite_logic;
@@ -202,4 +225,8 @@ module ControlUnit(
 
     // assign MWrite = MWriteE;
     assign MCycleOp = MCycleOpE;
+
+    assign Carry_use = Carry_useE;
+    assign Reverse_B = Reverse_BE;
+    assign Rev_Src = Rev_SrcE;
 endmodule

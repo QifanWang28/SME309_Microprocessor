@@ -51,7 +51,7 @@ module ARM(
 
     wire [31:0] MCycle_result;
     wire [3:0] ALUFlags;
-    wire [1:0] ALUControl;
+    wire [2:0] ALUControl;
 
     wire MCycleOp;
     wire MWrite;
@@ -81,6 +81,14 @@ module ARM(
     wire [31:0] ALUM_A, ALUM_B;
 
     wire StartD;
+
+    wire Carry_use;
+    wire Reverse_B;
+    wire Rev_src;
+    wire [31:0] ALU_src_A = Rev_src ? Src_B: ALUM_A;
+    wire [31:0] ALU_src_B = Rev_src ? ALUM_A: Src_B;
+
+    wire Carry;
     // wire StallE;
     wire MCycle_out_signal;
     wire [3:0] MCycle_addr;
@@ -138,8 +146,7 @@ module ARM(
         .refresh_D2E(refresh_D2E|MCycle_Stall),
 
         .StallE     (MCycle_out_signal),
-        // .StallM     (MCycle_Stall),
-        // .StallW     (MCycle_Stall),
+
         .MemtoReg   (MemtoRegW   ),
         .MemWrite   (MemWrite   ),
         .ALUSrc     (ALUSrc     ),
@@ -159,7 +166,13 @@ module ARM(
         .MemtoRegE  (MemtoRegE  ),
 
         .MCycle_out_signal  (MCycle_out_signal),
-        .M_StartD   (StartD)
+        .M_StartD   (StartD),
+
+        .Carry_use(Carry_use),
+        .Reverse_B(Reverse_B),
+        .Rev_Src(Rev_src),
+
+        .C      (Carry)
     );
 
     Hazard_Unit u_Hazard_Unit(
@@ -277,12 +290,17 @@ module ARM(
         .ShOut  (RD2_shiftE  )
     );
 
+
     ALU u_ALU(
-    	.Src_A      (ALUM_A      ),
-        .Src_B      (Src_B      ),
+    	.Src_A      (ALU_src_A      ),
+        .Src_B      (ALU_src_B      ),
         .ALUControl (ALUControl ),
         .ALUResult  (ALUResult  ),
-        .ALUFlags   (ALUFlags   )
+        .ALUFlags   (ALUFlags   ),
+
+        .Carry_use(Carry_use),
+        .Reverse_B(Reverse_B),
+        .Carry     (Carry)
     );
 
     MCycle 
@@ -345,7 +363,7 @@ module ARM(
         .RD_M      (ReadData    ),
         .ALUOut_M  (ALUResultM  ),
         .A3_addrM (A3_addrM ),
-        // .MemtoRegM  (MemtoRegM),
+
 
         .RD_W      (RD_W      ),
         .ALUOut_W  (ALUOut_W  ),

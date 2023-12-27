@@ -6,10 +6,16 @@
 module ALU(
     input [31:0] Src_A,
     input [31:0] Src_B,
-    input [1:0] ALUControl,
+    input [2:0] ALUControl,
 
     output reg [31:0] ALUResult,
-    output [3:0] ALUFlags   // NZ [3:2] CV [1:0]
+    output [3:0] ALUFlags,   // NZ [3:2] CV [1:0]
+
+    input Carry,
+    input Carry_use,
+
+    input Reverse_B
+
     );
     
     wire N, Z, C, V;
@@ -24,13 +30,20 @@ module ALU(
 
     assign ALUFlags = {N, Z, C, V};
     
-    wire[31:0] SUM_B = (ALUControl[0]) ? ~Src_B : Src_B;
+    wire Carry_pre = ALUControl[0] ? !Carry : Carry;
+    wire Carry_ALU = Carry_pre & Carry_use;
+
+    wire[31:0] SUM_B = (ALUControl[0]) ? ~Src_B + 1'b1: Src_B;
+
+    wire [31:0] Re_src = Reverse_B ? ~ Src_B : Src_B;
     always @(*) begin
-        case(ALUControl)
-            2'b00:  {Cout, ALUResult} = Src_A + SUM_B;
-            2'b01:  {Cout, ALUResult} = Src_A + SUM_B + 1'b1;
-            2'b10:  ALUResult = Src_A & Src_B;
-            2'b11:  ALUResult = Src_A | Src_B;
+        case(ALUControl)    // 000: Add 001: Sub 010: And and BIC 011: ORR 100: EOR 101: MOV
+            3'b000:  {Cout, ALUResult} = Src_A + SUM_B + Carry_ALU;
+            3'b001:  {Cout, ALUResult} = Src_A + SUM_B - Carry_ALU;
+            3'b010:  ALUResult = Src_A & Re_src;
+            3'b011:  ALUResult = Src_A | Src_B;
+            3'b100:  ALUResult = Src_A ^ Src_B;
+            3'b101:  ALUResult = Re_src;
             default: ALUResult = 32'd0;
         endcase
     end
