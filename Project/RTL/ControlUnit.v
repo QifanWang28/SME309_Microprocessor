@@ -22,7 +22,7 @@ module ControlUnit(
 
     input done,
     output M_Start,
-    output MCycleOp,
+    output [1:0] MCycleOp,
     output MWrite,           // Need to be modified
     
     output RegWriteM,
@@ -55,7 +55,7 @@ module ControlUnit(
     wire [3:0] CondE;
     wire doneE;
     wire M_StartE;
-    wire MCycleOpE;
+    wire [1:0] MCycleOpE;
     wire MWriteE;
 
     wire NoWriteD;
@@ -68,7 +68,7 @@ module ControlUnit(
     wire ALUSrcD;
     wire [2:0] ALUControlD;
     wire MWriteD;
-    wire MCycleOpD;
+    wire [1:0] MCycleOpD;
     
     wire Carry_useD, Reverse_BD, Rev_SrcD;
     wire Carry_useE, Reverse_BE, Rev_SrcE;

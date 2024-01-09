@@ -1,4 +1,4 @@
-	AREA    MYCODE, CODE, READONLY, ALIGN=20 
+	AREA    MYCODE, CODE, READONLY, ALIGN=9
    	  ENTRY
 	  
 ; ------- <code memory (ROM mapped to Instruction Memory) begins>
@@ -21,8 +21,10 @@
     STR R4, [R6, #3072];
 	ADD R6, R6, #3072;
 	ADD R6, R6, #1024;
-    STR R5, [R6];
-    STR R12, [R6, #1024];
+	NOP;
+	NOP;
+    ;STR R5, [R6];
+    ;STR R12, [R6, #1024];
 	
 	SUB R6, R6, #3072;
 	SUB R6, R6, #1024;
@@ -32,8 +34,10 @@
     LDR R10, [R6, #3072];
 	ADD R6, R6, #3072;
 	ADD R6, R6, #1024;
-    LDR R11, [R6];
-    LDR R12, [R6, #1024];
+	NOP;
+	NOP;
+    ;LDR R11, [R6];
+    ;LDR R12, [R6, #1024];
 
 
 
@@ -49,7 +53,7 @@ halt
 	
 
 ; ------- <code memory (ROM mapped to DATA Memory) begins>
-	AREA    CONSTANTS, DATA, READONLY, ALIGN=20 
+	AREA    CONSTANTS, DATA, READONLY, ALIGN=9 
 
 
 addr1

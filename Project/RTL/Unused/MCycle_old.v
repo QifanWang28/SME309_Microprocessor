@@ -23,6 +23,7 @@ module MCycle
     reg reg_op;
 
     reg signal_reg;
+    
     always @(posedge CLK or posedge RESET) begin
       if(RESET) begin
         signal_reg <= 1'b0;
@@ -31,6 +32,7 @@ module MCycle
         signal_reg <= i_MCycle_signal;
       end
     end
+
     // state machine
     always @(posedge CLK or posedge RESET) begin
       if(RESET)

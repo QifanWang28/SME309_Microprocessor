@@ -38,8 +38,9 @@ module Hazard_Unit (
     wire Match_1E_W = (RA1E == A3_addrW);
     wire Match_2E_W = (RA2E == A3_addrW);
 
-    assign ForwardAE = (Match_1E_M & RegWriteM) ? 2'b10 : (Match_1E_W & RegWriteW) ? 2'b01: 2'b00;
-    assign ForwardBE = (Match_2E_M & RegWriteM) ? 2'b10 : (Match_2E_W & RegWriteW) ? 2'b01: 2'b00;
+    // There may be exist a bug
+    assign ForwardAE = (Match_1E_M & RegWriteM & !MemWriteM) ? 2'b10 : (Match_1E_W & RegWriteW) ? 2'b01: 2'b00;
+    assign ForwardBE = (Match_2E_M & RegWriteM & !MemWriteM) ? 2'b10 : (Match_2E_W & RegWriteW) ? 2'b01: 2'b00;
 
     // We judge whether STR is same with LDR element
     assign ForwardM = (RA2M == A3_addrW) & MemWriteM & MemtoRegW & RegWriteW;

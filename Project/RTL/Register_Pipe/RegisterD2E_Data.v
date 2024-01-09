@@ -57,7 +57,6 @@ module RegisterD2E_Data
             Shamt5_reg <= 5'd0;
             RA1_reg <= 4'd0;
             RA2_reg <= 4'd0;
-
         end
         else if(Stall)  begin
             RA1_reg <= RA1_reg;

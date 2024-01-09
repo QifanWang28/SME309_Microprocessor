@@ -35,10 +35,15 @@ module Cache (
         end
     end
 
-    wire Tag0_equal = Data_Block_valid[{2'd0, Addr_index}] & (Data_Block_Tag[{2'd0, Addr_index}] == Addr_tag);
-    wire Tag1_equal = Data_Block_valid[{2'd1, Addr_index}] & (Data_Block_Tag[{2'd1, Addr_index}] == Addr_tag);
-    wire Tag2_equal = Data_Block_valid[{2'd2, Addr_index}] & (Data_Block_Tag[{2'd2, Addr_index}] == Addr_tag);
-    wire Tag3_equal = Data_Block_valid[{2'd3, Addr_index}] & (Data_Block_Tag[{2'd3, Addr_index}] == Addr_tag);
+    wire Exist_0 = Data_Block_valid[{2'd0, Addr_index}];
+    wire Exist_1 = Data_Block_valid[{2'd1, Addr_index}];
+    wire Exist_2 = Data_Block_valid[{2'd2, Addr_index}];
+    wire Exist_3 = Data_Block_valid[{2'd3, Addr_index}]; 
+
+    wire Tag0_equal = Exist_0 & (Data_Block_Tag[{2'd0, Addr_index}] == Addr_tag);
+    wire Tag1_equal = Exist_1 & (Data_Block_Tag[{2'd1, Addr_index}] == Addr_tag);
+    wire Tag2_equal = Exist_2 & (Data_Block_Tag[{2'd2, Addr_index}] == Addr_tag);
+    wire Tag3_equal = Exist_3 & (Data_Block_Tag[{2'd3, Addr_index}] == Addr_tag);
 
     reg [31:0] Addr_reg = 32'd0; 
     always @(posedge clk) begin
@@ -48,6 +53,8 @@ module Cache (
     wire change = Addr_reg != Addr;
 
     wire [1:0] BLK_NUM;
+
+    
     Cache_Controller u_Cache_Controller(
         .clk        (clk        ),
         .Addr       (Addr       ),
@@ -55,6 +62,12 @@ module Cache (
         .Tag1_equal (Tag1_equal ),
         .Tag2_equal (Tag2_equal ),
         .Tag3_equal (Tag3_equal ),
+
+        .Empty_0    (~Exist_0),
+        .Empty_1    (~Exist_1),
+        .Empty_2    (~Exist_2),
+        .Empty_3    (~Exist_3),
+
         .Hit        (Hit        ),
         .Usecache   (change     ),
         .BLK_NUM    (BLK_NUM    )

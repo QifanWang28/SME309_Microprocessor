@@ -7,6 +7,11 @@ module Cache_Controller (
     input Tag2_equal,
     input Tag3_equal,
 
+    input Empty_0,
+    input Empty_1,
+    input Empty_2,
+    input Empty_3,
+    
     input Hit,
     input Usecache,
     output reg [1:0] BLK_NUM
@@ -23,10 +28,10 @@ module Cache_Controller (
     end
 
     always @(*) begin
-        if(Tag0_equal) BLK_NUM = 2'd0;
-        else if(Tag1_equal) BLK_NUM = 2'd1;
-        else if(Tag2_equal) BLK_NUM = 2'd2;
-        else if(Tag3_equal) BLK_NUM = 2'd3;
+        if(Tag0_equal|Empty_0) BLK_NUM = 2'd0;
+        else if(Tag1_equal|Empty_1) BLK_NUM = 2'd1;
+        else if(Tag2_equal|Empty_2) BLK_NUM = 2'd2;
+        else if(Tag3_equal|Empty_3) BLK_NUM = 2'd3;
         else BLK_NUM = {Tree_LRU[Addr_index][0], Tree_LRU[Addr_index][1]};
     end
 

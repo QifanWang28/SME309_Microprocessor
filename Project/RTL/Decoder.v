@@ -14,7 +14,7 @@ module Decoder(
 
     input done,
     output reg M_Start,
-    output reg MCycleOp,
+    output reg [1:0] MCycleOp,
     output reg MWrite,
 
     output reg Carry_use,
@@ -40,27 +40,39 @@ module Decoder(
                 if(Instr[25]==0 && Instr[7:4] == 4'b1001 && Instr[24:21] == 4'b0000)    begin
                     RegSrc[2] = 1'b1;
                     MWrite = done;                  
-                    MCycleOp = 1'b0;
+                    MCycleOp = 2'b0;
                     M_Start = 1'b1;
                 end
                 else begin
                     RegSrc[2] = 1'b0;
                     MWrite = 1'b0;
-                    MCycleOp = 1'b0;
+                    MCycleOp = 2'b0;
                     M_Start = 1'b0;
                 end
             end
             2'b01:  begin
-                if(Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111)  begin
+                if(Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111 && Instr[15:12] == 4'b0000)  begin
                     RegSrc[2] = 1'b1;
                     MWrite = done;
-                    MCycleOp = 1'b1;
+                    MCycleOp = 2'b1;
+                    M_Start = 1'b1;
+                end
+                else if(Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111 && Instr[15:12] == 4'b0001)  begin
+                    RegSrc[2] = 1'b1;
+                    MWrite = done;
+                    MCycleOp = 2'd2;
+                    M_Start = 1'b1;
+                end
+                else if(Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111 && Instr[15:12] == 4'b0010)  begin
+                    RegSrc[2] = 1'b1;
+                    MWrite = done;
+                    MCycleOp = 2'd3;
                     M_Start = 1'b1;
                 end
                 else begin
                     RegSrc[2] = 1'b0;
                     MWrite = 1'b0;
-                    MCycleOp = 1'b0;
+                    MCycleOp = 2'b0;
                     M_Start = 1'b0;
                 end
             end
@@ -74,9 +86,9 @@ module Decoder(
     end
     
     wire mul_judge = Instr[25]==0 && Instr[7:4] == 4'b1001 && Instr[24:21] == 4'b0000;
-    wire div_judge = Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111;
+    wire other_mul_cycle_judge = Instr[25:20] == 6'b111111 && Instr[7:4] == 4'b1111;
     always@(*)   begin
-        casex({op, funct_I, funct_U, funct_S, mul_judge, div_judge})
+        casex({op, funct_I, funct_U, funct_S, mul_judge, other_mul_cycle_judge})
             // 7'b00_x_xx_1x:  {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}  = 11'b0_0_0_x_xx_1_xx_00;
             7'b00_x_xx_1x:  {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}  = 11'b0_0_0_x_xx_0_xx_00;
             7'b00_0_xx_0x:  {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc[1:0], ALUOp}  = 11'b0000xx100_11;

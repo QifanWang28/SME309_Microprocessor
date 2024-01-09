@@ -25,12 +25,12 @@ module RegisterD2E_Cond
 
     input doneD,
     input M_StartD,
-    input MCycleOpD,
+    input [1:0] MCycleOpD,
     input MWriteD,
 
     output doneE,
     output M_StartE,
-    output MCycleOpE,
+    output [1:0] MCycleOpE,
     output MWriteE,
 
     input NoWriteD,
@@ -68,7 +68,7 @@ module RegisterD2E_Cond
 
     reg done_reg;
     reg M_Start_reg;
-    reg MCycleOp_reg;
+    reg [1:0] MCycleOp_reg;
     reg MWrite_reg;
 
     reg NoWrite_reg;
@@ -92,7 +92,7 @@ module RegisterD2E_Cond
 
             done_reg <= 1'd0;
             M_Start_reg <= 1'd0;
-            MCycleOp_reg <= 1'd0;
+            MCycleOp_reg <= 2'd0;
             MWrite_reg <= 1'd0;
 
             NoWrite_reg <= 1'b0;
@@ -117,7 +117,7 @@ module RegisterD2E_Cond
 
             done_reg <= 1'd0;
             M_Start_reg <= 1'd0;
-            MCycleOp_reg <= 1'd0;
+            MCycleOp_reg <= 2'd0;
             MWrite_reg <= 1'd0;
 
             NoWrite_reg <= 1'b0;

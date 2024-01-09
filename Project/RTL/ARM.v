@@ -53,7 +53,7 @@ module ARM(
     wire [3:0] ALUFlags;
     wire [2:0] ALUControl;
 
-    wire MCycleOp;
+    wire [1:0] MCycleOp;    // 0: integer mul   1: integer divide   2: flt add  3: flt mul
     wire MWrite;
     wire Start;
 
