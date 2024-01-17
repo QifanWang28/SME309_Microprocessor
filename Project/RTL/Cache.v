@@ -23,7 +23,7 @@ module Cache (
     reg Data_Block_valid [1023:0];
     reg Data_Block_Dirty [1023:0];
     reg [21:0] Data_Block_Tag [1023:0];
-    reg [31:0] Data_Block_Data [1023:0];
+    reg [31:0] Data_Block_Data [1023:0];                
 
     integer i;
     initial begin
