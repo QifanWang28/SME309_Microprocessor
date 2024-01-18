@@ -4,6 +4,9 @@ module ARM(
     input [31:0] Instr,
     input [31:0] ReadData,
 
+    input memory_ready,
+    output Hit,
+
     output MemWrite2Memory,
     output [31:0] PC,
     output [31:0] MissAddr,
@@ -130,7 +133,7 @@ module ARM(
 
     wire [31:0] Data;
     wire [31:0] Data2Memory;
-    wire Hit;
+    // wire Hit;
     wire MemWrite;
     // Fifth layer W layer
     wire MemtoRegW;
@@ -334,8 +337,8 @@ module ARM(
 
         .Start            (Start            ),
         .i_Busy           (Busy           ),
-
         .i_RA3            (A3_addrE         ),
+
         .o_Mul_result_out (MCycle_out_signal ),
         .o_RA3            (MCycle_addr       )
     );
@@ -379,7 +382,9 @@ module ARM(
         .MemWrite2Memory (MemWrite2Memory ),
         .MissAddr        (MissAddr        ),
         .ReadData        (ReadData        ), 
-        .Data2Memory     (Data2Memory     )
+        .Data2Memory     (Data2Memory     ),
+
+        .memory_ready   (memory_ready)
     );
     
     RegisterM2W_Data u_RegisterM2W_Data(

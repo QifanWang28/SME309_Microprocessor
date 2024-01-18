@@ -7,6 +7,8 @@ module Cache (
 
     input [31:0] ReadData,
     input [31:0] WriteData,
+    
+    input memory_ready,
 
     output Hit,         // Stall all device outside
 
@@ -75,7 +77,7 @@ module Cache (
 
     
     always @(posedge clk) begin
-        if(!Hit & !MemWrite) begin
+        if(!Hit & !MemWrite & memory_ready) begin
             Data_Block_valid[{BLK_NUM, Addr_index}] <= 1'b1;
             Data_Block_Tag[{BLK_NUM, Addr_index}] <= Addr_tag;
             Data_Block_Data[{BLK_NUM, Addr_index}] <= ReadData;
@@ -86,7 +88,7 @@ module Cache (
             Data_Block_Data[{BLK_NUM, Addr_index}] <= WriteData;
             Data_Block_Dirty[{BLK_NUM, Addr_index}] <= 1'd1;
         end
-        else if(!Hit & MemWrite)    begin
+        else if(!Hit & MemWrite & memory_ready)    begin
             Data_Block_valid[{BLK_NUM, Addr_index}] <= 1'b1;
             Data_Block_Tag[{BLK_NUM, Addr_index}] <= Addr_tag;
             Data_Block_Data[{BLK_NUM, Addr_index}] <= WriteData;

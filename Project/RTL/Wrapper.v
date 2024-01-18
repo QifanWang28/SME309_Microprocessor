@@ -95,7 +95,8 @@ initial begin
 			// for(i = 29; i < 128; i = i+1) begin 
 			// 	INSTR_MEM[i] = 32'h0; 
 			// end//*/
-			// Lab 2
+
+			// Q1
 			// INSTR_MEM[0] = 32'hE59F1204; 
 			// INSTR_MEM[1] = 32'hE59F2204; 
 			// INSTR_MEM[2] = 32'hE59F31F0; 
@@ -312,7 +313,7 @@ initial begin
 			// 	DATA_CONST_MEM[i] = 32'h0; 
 			// end
 
-			// Q2 3
+			// Q2 3 4
 			DATA_CONST_MEM[0] = 32'h00000810; 
 			DATA_CONST_MEM[1] = 32'h00000820; 
 			DATA_CONST_MEM[2] = 32'h00000830; 
@@ -333,7 +334,8 @@ initial begin
 			end
 end
 
-
+wire Hit;
+wire memory_ready;
 //----------------------------------------------------------------
 // ARM port map
 //----------------------------------------------------------------
@@ -342,6 +344,10 @@ ARM ARM1(
 	RESET,
 	Instr,
 	ReadData,
+
+	memory_ready,
+	Hit,
+
 	MemWrite,
 	PC,
 	ALUResult,
@@ -357,11 +363,38 @@ assign dec_DATA_VAR			= (ALUResult >= 32'h00000800 && ALUResult <= 32'h000009FC)
 //----------------------------------------------------------------
 // Data memory read 1
 //----------------------------------------------------------------
+
+reg hit_reg;
+reg [2:0]hit_cnt;
+
+always @(posedge CLK or negedge RESET) begin
+	if(RESET)	begin
+		hit_reg <= 1'b0;
+	end
+	else begin
+		hit_reg <= Hit;
+	end
+end
+
+always @(posedge CLK or negedge RESET) begin
+	if(RESET)	begin
+		hit_cnt <= 3'd0;
+	end
+	else if(Hit | (!(Hit) & hit_reg) | hit_cnt == 3'd5)	begin
+		hit_cnt <= 3'd0;
+	end
+	else if(!Hit)	begin
+		hit_cnt <= hit_cnt + 1'd1;
+	end
+end
+
+assign memory_ready = (hit_cnt == 3'd5);
+
 always@( * ) begin
 if (dec_DATA_VAR)
-	ReadData = DATA_VAR_MEM[ALUResult[8:2]] ; 
+	ReadData = DATA_VAR_MEM[ALUResult[8:2]]; 
 else if (dec_DATA_CONST)
-	ReadData = DATA_CONST_MEM[ALUResult[8:2]] ; 	
+	ReadData = DATA_CONST_MEM[ALUResult[8:2]]; 	
 else
 	ReadData = 32'h0 ; 
 end
@@ -375,7 +408,7 @@ assign ReadData_IO = DATA_VAR_MEM[DIP[6:0]];
 // Data Memory write
 //----------------------------------------------------------------
 always@(posedge CLK) begin
-    if( MemWrite && dec_DATA_VAR ) 
+    if( MemWrite && dec_DATA_VAR) 
         DATA_VAR_MEM[ALUResult[12:2]] <= WriteData ;
 end
 
