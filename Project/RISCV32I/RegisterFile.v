@@ -14,6 +14,12 @@ module RegisterFile(
     // declare RegBank
     reg [31:0] RegBank[1:31];
     
+    integer i;
+    initial begin
+        for(i = 1; i < 32; i = i + 1)   begin
+            RegBank[i] = 32'd0;
+        end
+    end
     assign RD1 = (A1 == 0) ? 0: RegBank[A1];
     assign RD2 = (A2 == 0) ? 0: RegBank[A2];
 

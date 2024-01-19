@@ -47,45 +47,22 @@ integer i;
 // Instruction Memory
 //----------------------------------------------------------------
 initial begin
-			INSTR_MEM[0] = 32'hE59F1204; 
-			INSTR_MEM[1] = 32'hE59F2204; 
-			INSTR_MEM[2] = 32'hE59F31F0; 
-			INSTR_MEM[3] = 32'hE59F41F0; 
-			INSTR_MEM[4] = 32'hE59FC1F0; 
-			INSTR_MEM[5] = 32'hE0815002; 
-			INSTR_MEM[6] = 32'hE5835004; 
-			INSTR_MEM[7] = 32'hE2833008; 
-			INSTR_MEM[8] = 32'hE5135004; 
-			INSTR_MEM[9] = 32'hE0426001; 
-			INSTR_MEM[10] = 32'hE5046004; 
-			INSTR_MEM[11] = 32'hE2444008; 
-			INSTR_MEM[12] = 32'hE5946004; 
-			INSTR_MEM[13] = 32'hE0070295; 
-			INSTR_MEM[14] = 32'hE59F81D4; 
-			INSTR_MEM[15] = 32'hE59F31D4; 
-			INSTR_MEM[16] = 32'h00070891; 
-			INSTR_MEM[17] = 32'hE2933000; 
-			INSTR_MEM[18] = 32'h000A0891; 
-			INSTR_MEM[19] = 32'hE09AA007; 
+			INSTR_MEM[0] = 32'h00a08113;
+			INSTR_MEM[1] = 32'h001141b3;
+			INSTR_MEM[2] = 32'h00328233;
+			INSTR_MEM[3] = 32'h00310663;
+			INSTR_MEM[4] = 32'h00a08113;
+
+			INSTR_MEM[5] = 32'h00a08113;
+
+			INSTR_MEM[6] = 32'h40008093;
+
+			INSTR_MEM[7] = 32'h00a54513;
+			INSTR_MEM[8] = 32'h40008093;
+			INSTR_MEM[9] = 32'h00a0a423;
+			INSTR_MEM[10] = 32'h0080a603;
 			
-			INSTR_MEM[20] = 32'hE2833000; 
-			INSTR_MEM[21] = 32'hE2833000; 
-			INSTR_MEM[22] = 32'hE2833000; 
-			INSTR_MEM[23] = 32'hE2933000; 
-			INSTR_MEM[24] = 32'hE2833000; 
-
-			INSTR_MEM[20] = 32'hf7f707f8;
-			INSTR_MEM[21] = 32'hf7f707f1;
-			INSTR_MEM[22] = 32'h07f702f8;
-			INSTR_MEM[23] = 32'hE2933000;
-			INSTR_MEM[24] = 32'h07fb02f8;
-
-			INSTR_MEM[25] = 32'hE08BB007; 
-			INSTR_MEM[26] = 32'hE08BB00A; 
-
-			INSTR_MEM[27] = 32'hE58CB000; 
-			INSTR_MEM[28] = 32'hEAFFFFFE; 
-			for(i = 29; i < 128; i = i+1) begin 
+			for(i = 11; i < 128; i = i+1) begin 
 				INSTR_MEM[i] = 32'h0; 
 			end
 end
@@ -114,7 +91,7 @@ initial begin
 			end
 end
 
-
+wire[1:0] Load_size;
 //----------------------------------------------------------------
 // ARM port map
 //----------------------------------------------------------------
@@ -126,14 +103,16 @@ ARM ARM1(
 	MemWrite,
 	PC,
 	ALUResult,
-	WriteData
+	WriteData,
+
+	Load_size
 );
 
 //----------------------------------------------------------------
 // Data memory address decoding
 //----------------------------------------------------------------
 assign dec_DATA_CONST		= (ALUResult >= 32'h00000200 && ALUResult <= 32'h000003FC) ? 1'b1 : 1'b0;
-assign dec_DATA_VAR			= (ALUResult >= 32'h00000800 && ALUResult <= 32'h000009FC) ? 1'b1 : 1'b0;
+assign dec_DATA_VAR			= (ALUResult >= 32'h000003FC && ALUResult <= 32'h000009FC) ? 1'b1 : 1'b0;
 
 //----------------------------------------------------------------
 // Data memory read 1
@@ -157,7 +136,15 @@ assign ReadData_IO = DATA_VAR_MEM[DIP[6:0]];
 //----------------------------------------------------------------
 always@(posedge CLK) begin
     if( MemWrite && dec_DATA_VAR ) 
-        DATA_VAR_MEM[ALUResult[8:2]] <= WriteData ;
+		if(Load_size == 2'd0)	begin
+        	DATA_VAR_MEM[ALUResult[8:2]] <= WriteData ;
+		end
+		else if(Load_size == 2'd1)	begin
+			DATA_VAR_MEM[ALUResult[8:2]][15:0] <= WriteData[15:0];
+		end
+		else if(Load_size == 2'd2)	begin
+			DATA_VAR_MEM[ALUResult[8:2]][7:0] <= WriteData[7:0];
+		end
 end
 
 //----------------------------------------------------------------

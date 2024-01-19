@@ -6,6 +6,7 @@ module RegisterFile(
     input [3:0] A3,
 
     input [3:0] A4,
+
     output [31:0] RD4,
 
     input [31:0] WD3,

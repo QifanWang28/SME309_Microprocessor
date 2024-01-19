@@ -28,7 +28,7 @@ module Decoder(
     reg Branch;
     
     wire [6:0] opcode = Instr[6:0];
-    wire funct3 = Instr[14:12];
+    wire [2:0] funct3 = Instr[14:12];
 
     wire [6:0] funct7 = Instr[31:25];
     // PC Logic

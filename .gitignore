@@ -10,7 +10,7 @@ Lab3/MyCycle/xsim.dir/tb_MCycle_behav.wdb/xsimSettings.ini
 /Project/*
 !/Project/RTL
 !/Project/Simv
-!/Project/RISCV32I
+!/Project/RISCV32I/*.V
 !Project introduction.md
 !/Project/Constraint_Source
 !/Project/Photo for Project introduction

@@ -16,24 +16,21 @@
     LDR R7, [R3, #-16];
 
     STR R1, [R6];
-    STR R2, [R6, #1024];
-    STR R3, [R6, #2048];
-    STR R4, [R6, #3072];
-	ADD R6, R6, #3072;
-	ADD R6, R6, #1024;
+    STR R2, [R6, #20];
+    STR R3, [R6, #40];
+    STR R4, [R6, #80];
+	ADD R6, R6, #10;
+	ADD R6, R6, #20;
 	NOP;
 	NOP;
     ;STR R5, [R6];
     ;STR R12, [R6, #1024];
 	
-	SUB R6, R6, #3072;
-	SUB R6, R6, #1024;
+	SUB R6, R6, #30;
     LDR R7, [R6];
-    LDR R8, [R6, #1024];
-    LDR R9, [R6, #2048];
-    LDR R10, [R6, #3072];
-	ADD R6, R6, #3072;
-	ADD R6, R6, #1024;
+    LDR R8, [R6, #20];
+    LDR R9, [R6, #40];
+    LDR R10, [R6, #80];
 	NOP;
 	NOP;
     ;LDR R11, [R6];

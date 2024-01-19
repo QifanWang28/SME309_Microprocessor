@@ -7,18 +7,24 @@ module ARM(
     output MemWrite,
     output [31:0] PC,
     output [31:0] ALUResult,
-    output [31:0] WriteData
-); 
+    output [31:0] WriteData,
 
+    output [1:0] Load_size
+); 
+    wire PCSrc;
     wire PCS_dire;
-    wire PCSrc_final;//, Busy;
-    assign PCSrc_final = PCS_dire | Condex;
+    
     wire [31:0] Result, PC, PC_Plus_4;
+    assign PCSrc_final = PCS_dire | PCSrc;
     
     wire [31:0] MCycle_result;
     wire Condex;
-    assign Result = MemtoReg ? ReadData: ALUResult;
+    assign Result = PC_4? PC_Plus_4 : (MemtoReg ? ReadData: ALUResult);
+    
+    wire [31:0] Result_trun;
 
+    assign Result_trun = (Load_size == 2'd0)?Result:(Load_size == 2'd1)? Result[15:0]:Result[7:0];
+    
     ProgramCounter u_ProgramCounter(
     	.CLK       (CLK       ),
         .Reset     (Reset     ),
@@ -39,6 +45,9 @@ module ARM(
 
     wire [3:0] ALUControl;
     wire Imm;
+    wire PC_4;
+    wire ALUSrc_A;
+    // wire [1:0] Load_size;
 
     ControlUnit u_ControlUnit(
     	.Instr      (Instr      ),
@@ -88,44 +97,24 @@ module ARM(
     assign WriteData = RD2;
 
     wire [31:0] ExtImm;
-    wire [31:0] RD2_shift;
-    assign Src_B = ALUSrc ? ExtImm : RD2_shift;
+    assign Src_B = ALUSrc ? ExtImm : RD2;
 
-    Shifter u_Shifter(
-    	.Sh     (Instr[6:5]     ),
-        .Shamt5 (Instr[11:7] ),
-        .ShIn   (RD2   ),
-        .ShOut  (RD2_shift  )
-    );
     
     Extend u_Extend(
     	.ImmSrc   (ImmSrc   ),
-        .InstrImm (Instr[31:12] ),
+        .InstrImm (Instr[31:7] ),
         .ExtImm   (ExtImm   )
     );
     
+
     ALU u_ALU(
     	.Src_A      (Src_A      ),
         .Src_B      (Src_B      ),
-        .Imm        (Imm),
         .ALUControl (ALUControl ),
-        .ALUResult  (ALUResult  ),
-        .ALUFlags   (ALUFlags   )
+        .Imm        (Imm),
+        .PC         (PC         ),
+        .ALUSrc_A   (ALUSrc_A   ),
+        .ALUResult  (ALUResult  )
     );
-    
-    // MCycle 
-    // #(
-    //     .WIDTH     (32     )
-    // )
-    // u_MCycle(
-    // 	.CLK      (CLK      ),
-    //     .RESET    (Reset    ),
-    //     .Start    (Start    ),
-    //     .MCycleOp (MCycleOp ),
-    //     .Operand1 (Src_A ),
-    //     .Operand2 (RD2 ),
-    //     .Result   (MCycle_result   ),
-    //     .Busy     (Busy     )
-    // );
     
 endmodule
