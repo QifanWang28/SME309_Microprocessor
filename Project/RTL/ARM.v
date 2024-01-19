@@ -322,6 +322,7 @@ module ARM(
         .RESET    (Reset    ),
         .Start    (Start    ),
         .i_MCycle_signal(MCycle_out_signal),
+        .Stall    (!Hit),
         
         .MCycleOp (MCycleOp ),
         .Operand1 (ALUM_A ),

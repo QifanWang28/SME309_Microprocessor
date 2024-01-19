@@ -7,7 +7,7 @@ module ControlUnit(
     output MemtoReg,
     output MemWrite,
     output ALUSrc,
-    output [1:0] ImmSrc,
+    output [2:0] ImmSrc,
     output RegWrite,
     output [2:0] RegSrc,
     output [1:0] ALUControl,	

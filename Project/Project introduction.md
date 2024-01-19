@@ -48,6 +48,16 @@ Hazard 分类（Data hazard, Control hazard）
 
 对于Hazard的情况，我们新创立MCycle_Stall = MCycle_Stall = ((MCycle_addr=RA1) || (MCycle_addr=RA2) || StartD) && Busy;
 
+
+
+在最后的仿真过程中，我们发现当两个MCycle指令接连到达的时候，会出现MCycle出现Bug。为了解决两个指令连续进入的bug，bug产生的原因是：
+
+![image-20240119021403727](./Photo for Project introduction/image-20240119021403727.png)
+
+每次乘法指令执行完，n_state会变到IDLE状态；State在下一个上升沿的时候会被赋值IDLE，同时经过组合逻辑n_state变为COMPUTING。在下图这个部分会直接进入从computing并不执行赋初值的命令，所以我们在上图代码中加入一个暂停信号signal_reg,当计算完成之后会有一个周期的赋初值，避免这个bug。
+
+![image-20240119022418183](./Photo for Project introduction/image-20240119022418183.png)
+
 经过上述步骤Q2完成，下面是我们的tb波形验证：
 
 下面是我们的tb的汇编语言：
@@ -208,4 +218,10 @@ RV32I 基本指令格式如图 3-5 所示，RV32I 的基本指令格式只有 4 
 
 上面这些格式，除 R-TYPE 外，其他的格式都需要把最高位（第 31 位）做符号扩展，以产生一个 32 位的立即数，作为指令的操作数。
 
-上图图所示的这些指令格式非常规整，其操作码、源寄存器和目标寄存器总是位于相同的位置上，简化了指令解码器的设计。
+上图所示的这些指令格式非常规整，其操作码、源寄存器和目标寄存器总是位于相同的位置上，简化了指令解码器的设计。
+
+总的六种指令是
+
+![image-20240119013410833](./Photo for Project introduction/image-20240119013410833.png)
+
+Extend要改变、decoder大改，中间各类连线，修改ALU

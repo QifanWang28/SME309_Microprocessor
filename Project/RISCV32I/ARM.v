@@ -32,7 +32,7 @@ module ARM(
     wire MemtoReg;
     wire MemWrite;
     wire ALUSrc;
-    wire [1:0] ImmSrc;
+    wire [2:0] ImmSrc;
     wire RegWrite;
 
     wire [2:0] RegSrc;
@@ -96,7 +96,7 @@ module ARM(
     
     Extend u_Extend(
     	.ImmSrc   (ImmSrc   ),
-        .InstrImm (Instr[23:0] ),
+        .InstrImm (Instr[31:12] ),
         .ExtImm   (ExtImm   )
     );
     
