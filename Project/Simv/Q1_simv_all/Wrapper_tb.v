@@ -5,7 +5,7 @@ wire [15:0] LED;
 wire [31:0] SEVENSEGHEX;
 Wrapper wrapper1 (DIP,LED,SEVENSEGHEX,RESET,CLK); 
 initial begin
-  DIP = 6'b000001;
+  DIP = 6'b000010;
   CLK = 0;
   RESET = 0;
   #10

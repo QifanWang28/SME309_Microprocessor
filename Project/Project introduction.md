@@ -206,15 +206,13 @@ assign MissAddr = {Data_Block_Tag[{BLK_NUM, Addr_index}], Addr_index, 2'b00};
 
 经过上述步骤，我们就可以完成对Cache的构建，一下是对Cache的tb和汇编文件
 
-# Bonus1 RiscV32I
+## Q6 RiscV32I
 
-在RISCV32I当中有几个与ARM不一样的地方：
+在RISCV32I中，我们要完成如下这些指令
 
-1、寄存器有32个，其中R0表示0
+![image-20240119095635718](./Photo for Project introduction/image-20240119095635718.png)
 
-![image-20240119001209268](./Photo for Project introduction/image-20240119001209268.png)
-
-RV32I 基本指令格式如图 3-5 所示，RV32I 的基本指令格式只有 4 种，分别是寄存器类型（R-TYPE）、短立即数类型（I-TYPE）、内存存储类型（S-TYPE）、高位立即数类型（U-TYPE）。
+RV32I 基本指令格式如下图图所示，RV32I 的基本指令格式只有 4 种，分别是寄存器类型（R-TYPE）、短立即数类型（I-TYPE）、内存存储类型（S-TYPE）、高位立即数类型（U-TYPE）。
 
 ![image-20240119001535748](./Photo for Project introduction/image-20240119001535748.png)
 
@@ -228,4 +226,13 @@ RV32I 基本指令格式如图 3-5 所示，RV32I 的基本指令格式只有 4 
 
 ![image-20240119013410833](./Photo for Project introduction/image-20240119013410833.png)
 
-Extend要改变、decoder大改，中间各类连线，修改ALU
+
+
+在RISCV32I当中有几个与ARM不一样的地方：
+
+1、寄存器有32个，其中R0表示0
+
+![image-20240119001209268](./Photo for Project introduction/image-20240119001209268.png)
+
+Extend要改变、decoder大改，中间各类连线，修改ALU, 增加state_comparasion, 不用shift和condlogic
+

@@ -281,6 +281,37 @@ initial begin
 			for(i = 26; i < 128; i = i+1) begin 
 				INSTR_MEM[i] = 32'h0; 
 			end
+
+			// Q5
+			// INSTR_MEM[0] = 32'hE59F11F8; 
+
+			// INSTR_MEM[1] = 32'hE0812001; 
+
+			// INSTR_MEM[2] = 32'hE0413002; 
+			// INSTR_MEM[3] = 32'hE0814002; 
+
+			// INSTR_MEM[4] = 32'hE0435004; 
+			// INSTR_MEM[5] = 32'hE0836004; 
+
+			// INSTR_MEM[6] = 32'hE0467001; 
+			
+			// INSTR_MEM[7] = 32'hE0848007; 
+			
+			// for(i = 8; i < 128; i = i+1) begin 
+			// 	INSTR_MEM[i] = 32'h0; 
+			// end
+/*
+	LDR R1, constant1;
+	ADD R2, R1, #8;     ; R2 = R1 + R1
+	SUB R3, R2, #1;     ; R3 = R2 - R1
+	ADD R4, R1, R2;     ; R4 = R1 + R3
+	SUB R5, R3, R4;     ; R5 = R4 - R2
+	ADD R6, R3, R4;     ; R6 = R2 + R5
+	SUB R7, R6, R1;     ; R7 = R6 - R3
+	ADD R8, R4, R7;     ; R8 = R4 + R7
+	SUB R8, R4, R6;     ; R9 = R8 - R6
+*/
+
 end
 
 //----------------------------------------------------------------
@@ -319,6 +350,13 @@ initial begin
 			for(i = 6; i < 128; i = i+1) begin 
 				DATA_CONST_MEM[i] = 32'h0; 
 			end
+
+			// Q5
+			// DATA_CONST_MEM[0] = 32'h00000009; 
+			// DATA_CONST_MEM[1] = 32'h00000009; 
+			// for(i = 2; i < 128; i = i+1) begin 
+			// 	DATA_CONST_MEM[i] = 32'h0; 
+			// end
 end
 
 //----------------------------------------------------------------
