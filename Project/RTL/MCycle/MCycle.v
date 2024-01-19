@@ -13,8 +13,8 @@ module MCycle
 
     input Stall,
 
-    output [WIDTH-1:0] Result,  //For MUL, assign the lower-32bits result; For DIV, assign the quotient.
-    output Busy, // Set immediately when Start is set. Cleared when the Results become ready. This bit can be used to stall the processor while multi-cycle operations are on.
+    output reg [WIDTH-1:0] Result,  //For MUL, assign the lower-32bits result; For DIV, assign the quotient.
+    output reg Busy, // Set immediately when Start is set. Cleared when the Results become ready. This bit can be used to stall the processor while multi-cycle operations are on.
     input i_MCycle_signal
 );
 
@@ -29,7 +29,7 @@ module MCycle
     reg state, n_state;
     reg done;
     reg [1:0] reg_op;
-    reg Busy_temp;
+    // reg Busy;
 
     reg signal_reg;
     always @(posedge CLK or posedge RESET) begin
@@ -53,22 +53,22 @@ module MCycle
         IDLE: begin
           if(Start & ~signal_reg) begin
             n_state = COMPUTING;
-            Busy_temp = 1'b1;
+            Busy = 1'b1;
           end
           else  begin
             n_state = IDLE;
-            Busy_temp = 1'b0;
+            Busy = 1'b0;
           end
         end
 
         COMPUTING:  begin
           if(~done) begin
             n_state = COMPUTING;
-            Busy_temp = 1'b1;
+            Busy = 1'b1;
           end
           else begin
             n_state = IDLE;
-            Busy_temp = 1'b0;
+            Busy = 1'b0;
           end
         end
       endcase
@@ -338,38 +338,38 @@ module MCycle
     end
 
 ///////////////////////////////////result control part////////////////////////////////////////////////////
-    reg [31:0] Result_temp;
-    reg [31:0] Result_reg;
+    // reg [31:0] Result_temp;
+    // reg [31:0] Result_reg;
     reg Busy_reg;
 
     always @(*) begin
         case (reg_op)
-          2'd0: Result_temp = shifted_op1[WIDTH-1:0];
-          2'd1: Result_temp = shifted_op1[WIDTH-1:0];
-          2'd2: Result_temp = fl_out_add;
-          2'd3: Result_temp = fl_out_mul;
+          2'd0: Result = shifted_op1[WIDTH-1:0];
+          2'd1: Result = shifted_op1[WIDTH-1:0];
+          2'd2: Result = fl_out_add;
+          2'd3: Result = fl_out_mul;
         endcase
     end
 
-    always @(posedge CLK or negedge RESET)  begin
-        if(RESET) begin
-            Result_reg <= 32'd0; 
-        end
-        else if(done) begin
-            Result_reg <= Result_temp;
-        end
-    end
+    // always @(posedge CLK or negedge RESET)  begin
+    //     if(RESET) begin
+    //         Result_reg <= 32'd0; 
+    //     end
+    //     else if(done) begin
+    //         Result_reg <= Result_temp;
+    //     end
+    // end
 
-    always @(posedge CLK or negedge RESET)  begin
-        if(RESET) begin
-            Busy_reg <= 1'd0; 
-        end
-        else if(done) begin
-            Busy_reg <= Busy_temp;
-        end
-    end
+    // always @(posedge CLK or negedge RESET)  begin
+    //     if(RESET) begin
+    //         Busy_reg <= 1'd0; 
+    //     end
+    //     else if(done) begin
+    //         Busy_reg <= Busy;
+    //     end
+    // end
 
-    assign Result = (Stall) ?  Result_reg : Result_temp;
-    assign Busy = (Stall) ?  Busy_reg :  Busy_temp;
+    // assign Result = (Stall) ?  Result_reg : Result_temp;
+    // assign Busy = (Stall) ?  Busy_reg :  Busy;
 endmodule
 

@@ -10,17 +10,19 @@ module ARM(
     output [31:0] WriteData
 ); 
 
-    wire PCSrc;//, Busy;
+    wire PCS_dire;
+    wire PCSrc_final;//, Busy;
+    assign PCSrc_final = PCS_dire | Condex;
     wire [31:0] Result, PC, PC_Plus_4;
     
     wire [31:0] MCycle_result;
-
+    wire Condex;
     assign Result = MemtoReg ? ReadData: ALUResult;
 
     ProgramCounter u_ProgramCounter(
     	.CLK       (CLK       ),
         .Reset     (Reset     ),
-        .PCSrc     (PCSrc     ),
+        .PCSrc     (PCSrc_final     ),
         .Result    (Result    ),
 
         .PC        (PC        ),
@@ -53,7 +55,8 @@ module ARM(
         .ALUSrc_A   (ALUSrc_A   ),
         .PC_4       (PC_4       ),
         .Load_size  (Load_size  ),
-        .PCS_dire   (PCS_dire   )
+        .PCS_dire   (PCS_dire   ),
+        .Condex     (Condex)
     );
     
     
@@ -66,14 +69,20 @@ module ARM(
 
     RegisterFile u_RegisterFile(
     	.CLK (CLK ),
-        .WE3 (RegWrite),
+        .WE3 (RegWrite ),
         .A1  (RA1  ),
         .A2  (RA2  ),
         .A3  (RA3  ),
         .WD3 (Result ),
-        .R15 (PC_Plus_4 + 3'd4),
         .RD1 (Src_A ),
         .RD2 (RD2 )
+    );
+    
+    State_compare u_State_compare(
+    	.Instr  (Instr  ),
+        .RS1    (Src_A    ),
+        .RS2    (RD2    ),
+        .Condex (Condex )
     );
     
     assign WriteData = RD2;

@@ -17,14 +17,16 @@ module ControlUnit(
     output PC_4,
     output [1:0] Load_size,
 
-    output PCS_dire
+    output PCS_dire,
+
+    input Condex
     ); 
     
     wire PCS, RegW, MemW;
 
-    assign PCSrc = PCS;
-    assign RegWrite = RegW;
-    assign MemWrite = MemW;
+    assign PCSrc = PCS & Condex;
+    assign RegWrite = RegW & Condex;
+    assign MemWrite = MemW & Condex;
 
     Decoder u_Decoder(
     	.Instr      (Instr      ),

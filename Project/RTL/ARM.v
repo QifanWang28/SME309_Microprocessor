@@ -258,7 +258,7 @@ module ARM(
         .R15 (PC_Plus_4),
         .RD1 (Src_A ),
         .RD2 (RD2 ),
-        .RD3 (RD4)
+        .RD4 (RD4)
     );
 
     Extend u_Extend(
