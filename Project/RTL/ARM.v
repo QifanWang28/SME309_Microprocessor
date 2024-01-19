@@ -121,7 +121,6 @@ module ARM(
     wire MemWriteM;
 
     wire ForwardM;
-    
 
     wire BusyM;
 
@@ -165,7 +164,7 @@ module ARM(
         .RegWrite   (RegWrite   ),
         .RegSrc     (RegSrc     ),
         .ALUControl (ALUControl ),
-        .PCSrc      (PCSrc      ),
+        .PCSrc      (PCSrcE      ),
 
         .done       (~Busy      ),
         .M_Start    (Start      ),

@@ -9,6 +9,8 @@ Lab3/MyCycle/xsim.dir/tb_MCycle_behav.wdb/xsimSettings.ini
 !/DJY_Lab3/Hardware
 /Project/*
 !/Project/RTL
-!/Project/SIMV
+!/Project/Simv
 !/Project/RISCV32I
 !Project introduction.md
+!/Project/Constraint_Source
+!/Project/Photo for Project introduction

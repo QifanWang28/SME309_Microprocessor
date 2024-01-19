@@ -54,6 +54,7 @@
     ADD R1,R1,#1; R1 =82
     ADD R1,R1,#1; R1 =82
 	MUL R7,R5,R2;R7=66
+    
     LDR R1,number0; R1 =0
     ADD R1,R1,#1; R1 =0
     ADD R1,R7,R1;
