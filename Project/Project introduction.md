@@ -200,6 +200,10 @@ assign Data2Memory = Data_Block_Data[{BLK_NUM, Addr_index}];
 assign MissAddr = {Data_Block_Tag[{BLK_NUM, Addr_index}], Addr_index, 2'b00};
 ```
 
+在仿真的过程中，我们发现了一个问题，在miss的情况下，我们会对整个处理器做暂停处理，但是MCycle模块独立于整个处理器，所以它仍然在运行。所以如果它完成计算的一周期是在miss的周期当中，MCycle输出的值无法进入M stage中。在这里我们做了一个特殊的处理。对于MCycle做一个类似buffer的输出，当Cache miss的情况下，如果输出数据，则将数据存储，当Miss消失的时候再输出。如此一来，我们既保留了Non-stalling的特性，也使他正常输出。
+
+
+
 经过上述步骤，我们就可以完成对Cache的构建，一下是对Cache的tb和汇编文件
 
 # Bonus1 RiscV32I

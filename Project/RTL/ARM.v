@@ -10,7 +10,10 @@ module ARM(
     output MemWrite2Memory,
     output [31:0] PC,
     output [31:0] MissAddr,
-    output [31:0] Data2Memory
+    output [31:0] Data2Memory,
+
+    input [3:0] RA4,
+    output [31:0] RD4
 ); 
 
     // All wires    
@@ -249,10 +252,13 @@ module ARM(
         .A1  (RA1  ),
         .A2  (RA2  ),
         .A3  (A3_addrW  ),
+        .A4  (RA4),
+
         .WD3 (ResultW ),
         .R15 (PC_Plus_4),
         .RD1 (Src_A ),
-        .RD2 (RD2 )
+        .RD2 (RD2 ),
+        .RD3 (RD4)
     );
 
     Extend u_Extend(

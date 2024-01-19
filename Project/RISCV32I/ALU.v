@@ -2,7 +2,8 @@ module ALU(
     input [31:0] Src_A,
     input [31:0] Src_B,
     input [3:0] ALUControl,
-
+    input Imm,
+    input [31:0] PC,
     output reg [31:0] ALUResult
     // output [3:0] ALUFlags   // NZ [3:2] CV [1:0]
     );
@@ -20,6 +21,8 @@ module ALU(
     // assign ALUFlags = {N, Z, C, V};
     
     // wire[31:0] SUM_B = (ALUControl[0]) ? ~Src_B : Src_B;
+    wire [31:0] trun_B = Imm?Src_B[11:7]:Src_B;
+
     always @(*) begin
         case(ALUControl)
             4'd0: ALUResult = Src_A + Src_B;
@@ -27,11 +30,13 @@ module ALU(
             4'd2: ALUResult = Src_A ^ Src_B;
             4'd3: ALUResult = Src_A | Src_B;
             4'd4: ALUResult = Src_A & Src_B;
-            4'd5: ALUResult = Src_A << Src_B;
-            4'd6: ALUResult = Src_A >> Src_B;
-            4'd7: ALUResult = Src_A >>> Src_B;
+            4'd5: ALUResult = Src_A << trun_B;
+            4'd6: ALUResult = Src_A >> trun_B;
+            4'd7: ALUResult = Src_A >>> trun_B;
             4'd8: ALUResult = (Src_A < Src_B)?1'b1:1'b0;
-            4'd9: ALUResult = (Src_A > Src_B)?1'b1:1'b0;
+            4'd9: ALUResult = (Src_A < Src_B)?1'b1:1'b0;
+            4'd10: ALUResult = Src_B << 12;
+            4'd11: ALUResult = PC + Src_B << 12;
             default: ALUResult = 32'd0;
         endcase
     end

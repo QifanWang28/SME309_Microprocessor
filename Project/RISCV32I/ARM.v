@@ -10,41 +10,36 @@ module ARM(
     output [31:0] WriteData
 ); 
 
-    wire PCSrc, Busy;
+    wire PCSrc;//, Busy;
     wire [31:0] Result, PC, PC_Plus_4;
+    
     wire [31:0] MCycle_result;
 
-    assign Result = MWrite? MCycle_result:(MemtoReg ? ReadData: ALUResult);
+    assign Result = MemtoReg ? ReadData: ALUResult;
+
     ProgramCounter u_ProgramCounter(
     	.CLK       (CLK       ),
         .Reset     (Reset     ),
         .PCSrc     (PCSrc     ),
         .Result    (Result    ),
-        .Busy      (Busy      ),
 
         .PC        (PC        ),
         .PC_Plus_4 (PC_Plus_4 )
     );
 
     wire [31:0] Instr;
-    wire [3:0] ALUFlags;
     
     wire MemtoReg;
     wire MemWrite;
     wire ALUSrc;
-    wire [2:0] ImmSrc;
+    wire [3:0] ImmSrc;
     wire RegWrite;
 
-    wire [2:0] RegSrc;
-    wire [1:0] ALUControl;
+    wire [3:0] ALUControl;
+    wire Imm;
 
-    wire MCycleOp;
-    wire MWrite;
-    wire Start;
-    
     ControlUnit u_ControlUnit(
     	.Instr      (Instr      ),
-        .ALUFlags   (ALUFlags   ),
         .CLK        (CLK        ),
         .rst        (Reset      ),
         .MemtoReg   (MemtoReg   ),
@@ -52,26 +47,26 @@ module ARM(
         .ALUSrc     (ALUSrc     ),
         .ImmSrc     (ImmSrc     ),
         .RegWrite   (RegWrite   ),
-        .RegSrc     (RegSrc     ),
         .ALUControl (ALUControl ),
         .PCSrc      (PCSrc      ),
-
-        .done       (~Busy      ),
-        .M_Start    (Start      ),
-        .MCycleOp   (MCycleOp   ),
-        .MWrite     (MWrite     )
+        .Imm        (Imm        ),
+        .ALUSrc_A   (ALUSrc_A   ),
+        .PC_4       (PC_4       ),
+        .Load_size  (Load_size  ),
+        .PCS_dire   (PCS_dire   )
     );
     
-    wire [3:0] RA1 = RegSrc[2] ? Instr[11:8] : (RegSrc[0] ? 4'd15: Instr[19:16]);
-    wire [3:0] RA2 = RegSrc[2] ? Instr[3:0] : (RegSrc[1] ? Instr[15:12] : Instr[3:0]);
-    wire [3:0] RA3 = RegSrc[2] ? Instr[19:16] : Instr[15:12];
+    
+    wire [4:0] RA1 = Instr[19:15];
+    wire [4:0] RA2 = Instr[24:20];
+    wire [4:0] RA3 = Instr[11:7];
 
 
     wire [31:0] Src_A, Src_B, RD2;
 
     RegisterFile u_RegisterFile(
     	.CLK (CLK ),
-        .WE3 (RegWrite&(~Busy) ),
+        .WE3 (RegWrite),
         .A1  (RA1  ),
         .A2  (RA2  ),
         .A3  (RA3  ),
@@ -103,24 +98,25 @@ module ARM(
     ALU u_ALU(
     	.Src_A      (Src_A      ),
         .Src_B      (Src_B      ),
+        .Imm        (Imm),
         .ALUControl (ALUControl ),
         .ALUResult  (ALUResult  ),
         .ALUFlags   (ALUFlags   )
     );
     
-    MCycle 
-    #(
-        .WIDTH     (32     )
-    )
-    u_MCycle(
-    	.CLK      (CLK      ),
-        .RESET    (Reset    ),
-        .Start    (Start    ),
-        .MCycleOp (MCycleOp ),
-        .Operand1 (Src_A ),
-        .Operand2 (RD2 ),
-        .Result   (MCycle_result   ),
-        .Busy     (Busy     )
-    );
+    // MCycle 
+    // #(
+    //     .WIDTH     (32     )
+    // )
+    // u_MCycle(
+    // 	.CLK      (CLK      ),
+    //     .RESET    (Reset    ),
+    //     .Start    (Start    ),
+    //     .MCycleOp (MCycleOp ),
+    //     .Operand1 (Src_A ),
+    //     .Operand2 (RD2 ),
+    //     .Result   (MCycle_result   ),
+    //     .Busy     (Busy     )
+    // );
     
 endmodule
