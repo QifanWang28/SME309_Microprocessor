@@ -15,7 +15,6 @@ module RegisterFile(
     // declare RegBank
     reg [31:0] RegBank[1:31];
     
-
     assign RD1 = (A1 == 0) ? 0: RegBank[A1];
     assign RD2 = (A2 == 0) ? 0: RegBank[A2];
 

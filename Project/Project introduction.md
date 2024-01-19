@@ -129,5 +129,83 @@ wire Carry_ALU = Carry_pre & Carry_use;
 
 ​	总而言之这个方法就是用一个树状结构来选择该去的位置，每次选择某一位的时候，上面的值和下面指向的值就要进行翻转。下一次指向的就是翻转后的值。如上图所示，达到一种实现LRU的结果。但是，这个方法也只是近似的LRU，在部分情况下，该方法所替换的不是最久未使用的单元。综上伪LRU方法的替换效果应该略差于LRU，好于随机替换，并且它的资源远小于LRU。尤其是在我们实现的情况下，有256组记录数据，用LRU绝对是一种非常奢侈的资源消耗。
 
-​	除了替换策略外，正常情况下，cache会优先选择hit和empty的位置，当cache满的时候才会选择Pseudo-LRU。同时我们模拟了一个memory 5个周期penalty，当memory给到memory_ready信号的时候，才让cache赋值。当处于!Hit状态时，将整个处理器暂停。除此之外
+​	除了替换策略外，正常情况下，cache会优先选择hit和empty的位置，当cache满的时候才会选择Pseudo-LRU。同时我们模拟了一个memory 5个周期penalty，当memory给到memory_ready信号的时候，才让cache赋值。当处于!Hit状态时，将整个处理器暂停。
 
+之后考虑的就是 write-allocate 和 write-back，write allocate就是write miss时，修改memory的值，并且赋给Cache；我们这边属于特殊情况，一个block当中只有一个data。所以这边的write allocate就是修改memory值和Cache即可，不用从Memory中调取data。
+
+write-back是，当set中的值被覆盖时（write or read），如果block中的值是dirty的，就将block中的dirty值给赋到memory中。
+
+所以对于这种情况，我们分为两步进行分析：
+
+一步是Cache内部赋值，需要考虑三种情况：
+
+1、Hit并且是Write的情况，直接写入数据。
+
+2、!Hit并且是Write的情况，修改Tag, data和Dirty，valid。
+
+3、!Hit并且是Read的情况，修改Tag, data和Dirty，valid。
+
+后两种情况都需要等到Memory的ready信号才能进行，保证数据传输成功。
+
+实现代码如下
+
+```verilog
+always @(posedge clk) begin
+        if(!Hit & !MemWrite & memory_ready) begin
+            Data_Block_valid[{BLK_NUM, Addr_index}] <= 1'b1;
+            Data_Block_Tag[{BLK_NUM, Addr_index}] <= Addr_tag;
+            Data_Block_Data[{BLK_NUM, Addr_index}] <= ReadData;
+            Data_Block_Dirty[{BLK_NUM, Addr_index}] <= 1'd0;
+        end
+        else if(Hit & MemWrite)begin
+            Data_Block_valid[{BLK_NUM, Addr_index}] <= 1'b1;
+            Data_Block_Data[{BLK_NUM, Addr_index}] <= WriteData;
+            Data_Block_Dirty[{BLK_NUM, Addr_index}] <= 1'd1;
+        end
+        else if(!Hit & MemWrite & memory_ready)    begin
+            Data_Block_valid[{BLK_NUM, Addr_index}] <= 1'b1;
+            Data_Block_Tag[{BLK_NUM, Addr_index}] <= Addr_tag;
+            Data_Block_Data[{BLK_NUM, Addr_index}] <= WriteData;
+            Data_Block_Dirty[{BLK_NUM, Addr_index}] <= 1'd1;
+        end
+    end
+```
+
+第二步是对于Cache的输出情况:
+
+1、Write-back的实现：当没有hit的情况，并通过我们的选择set模块得到的set非空并dirty，则将这个数据传输到Memory当中。
+
+2、对于处理器需要的数据，直接将Data输出。
+
+实现代码如下
+
+```verilog
+assign Data = Tag0_equal ? Data_Block_Data[{2'd0, Addr_index}] : 
+                  Tag1_equal ? Data_Block_Data[{2'd1, Addr_index}] :
+                  Tag2_equal ? Data_Block_Data[{2'd2, Addr_index}] :
+                  Tag3_equal ? Data_Block_Data[{2'd3, Addr_index}] : 32'dz;
+
+assign MemWrite2Memory = (!Hit & Data_Block_valid[{BLK_NUM, Addr_index}] & Data_Block_Dirty[{BLK_NUM, Addr_index}]);
+assign Data2Memory = Data_Block_Data[{BLK_NUM, Addr_index}];
+assign MissAddr = {Data_Block_Tag[{BLK_NUM, Addr_index}], Addr_index, 2'b00};
+```
+
+经过上述步骤，我们就可以完成对Cache的构建，一下是对Cache的tb和汇编文件
+
+# Bonus1 RiscV32I
+
+在RISCV32I当中有几个与ARM不一样的地方：
+
+1、寄存器有32个，其中R0表示0
+
+![image-20240119001209268](./Photo for Project introduction/image-20240119001209268.png)
+
+RV32I 基本指令格式如图 3-5 所示，RV32I 的基本指令格式只有 4 种，分别是寄存器类型（R-TYPE）、短立即数类型（I-TYPE）、内存存储类型（S-TYPE）、高位立即数类型（U-TYPE）。
+
+![image-20240119001535748](./Photo for Project introduction/image-20240119001535748.png)
+
+为了方便跳转指令，RV32I 还包含两种衍生格式 B-TYPE（Branch，条件跳转）与 J-TYPE（Jump，无条件跳转）。B-TYPE 衍生于 S-TYPE，B-TYPE 除了立即数的位排列与 S-TYPE 不一样外，其他的格式都与 S-TYPE 一样。J-TYPE 也是通过类似的方式衍生于 U-TYPE。用这种方式衍生新格式的目的是便于硬件产生目标地址。
+
+上面这些格式，除 R-TYPE 外，其他的格式都需要把最高位（第 31 位）做符号扩展，以产生一个 32 位的立即数，作为指令的操作数。
+
+上图图所示的这些指令格式非常规整，其操作码、源寄存器和目标寄存器总是位于相同的位置上，简化了指令解码器的设计。
