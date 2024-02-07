@@ -282,24 +282,30 @@ initial begin
 				INSTR_MEM[i] = 32'h0; 
 			end
 
-			// Q5
-			// INSTR_MEM[0] = 32'hE59F11F8; 
-
-			// INSTR_MEM[1] = 32'hE0812001; 
-
-			// INSTR_MEM[2] = 32'hE0413002; 
-			// INSTR_MEM[3] = 32'hE0814002; 
-
-			// INSTR_MEM[4] = 32'hE0435004; 
-			// INSTR_MEM[5] = 32'hE0836004; 
-
-			// INSTR_MEM[6] = 32'hE0467001; 
-			
-			// INSTR_MEM[7] = 32'hE0848007; 
-			
-			// for(i = 8; i < 128; i = i+1) begin 
+			//Q5
+            // INSTR_MEM[0] = 32'hE59F11F8; 
+        	// INSTR_MEM[1] = 32'hE59F21F8; 
+            // INSTR_MEM[2] = 32'hE59F31F8; 
+            // INSTR_MEM[3] = 32'hE59F41F8; 
+			// INSTR_MEM[4] = 32'hE59F51F8; 
+			// INSTR_MEM[5] = 32'hE0011001;
+			// INSTR_MEM[6] = 32'hE0011001;
+			// INSTR_MEM[7] = 32'hE0011001;
+			// INSTR_MEM[8] = 32'hE0011001;
+			// INSTR_MEM[9] = 32'hE0011001;
+			// INSTR_MEM[10] = 32'hE0011001;
+			// INSTR_MEM[11] = 32'hE7F612F3; 
+			// INSTR_MEM[12] = 32'hE7F712F2; 
+			// INSTR_MEM[13] = 32'hE7F812F5; 
+			// INSTR_MEM[14] = 32'hE7F921F3; 
+			// INSTR_MEM[15] = 32'hE7FA22F2; 
+			// INSTR_MEM[16] = 32'hE7FB12F9; 
+			// INSTR_MEM[17] = 32'hE7FC1AF9; 
+			// INSTR_MEM[18] = 32'hE7FD23F4; 
+			// INSTR_MEM[19] = 32'hE7FE2CF2; 
+			// for(i = 20; i < 128; i = i+1) begin 
 			// 	INSTR_MEM[i] = 32'h0; 
-			// end
+			// end		
 /*
 	LDR R1, constant1;
 	ADD R2, R1, #8;     ; R2 = R1 + R1
@@ -352,11 +358,14 @@ initial begin
 			end
 
 			// Q5
-			// DATA_CONST_MEM[0] = 32'h00000009; 
-			// DATA_CONST_MEM[1] = 32'h00000009; 
-			// for(i = 2; i < 128; i = i+1) begin 
-			// 	DATA_CONST_MEM[i] = 32'h0; 
-			// end
+//          DATA_CONST_MEM[0] = 32'h7F800000; 
+//                      DATA_CONST_MEM[1] = 32'h62F00000; 
+//                      DATA_CONST_MEM[2] = 32'hE2F00000; 
+//                      DATA_CONST_MEM[3] = 32'hBFFFFFFF; 
+//                      DATA_CONST_MEM[4] = 32'hE2F00001; 
+//                      for(i = 5; i < 128; i = i+1) begin 
+//                          DATA_CONST_MEM[i] = 32'h0; 
+//                      end
 end
 
 //----------------------------------------------------------------

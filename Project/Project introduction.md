@@ -208,7 +208,7 @@ assign MissAddr = {Data_Block_Tag[{BLK_NUM, Addr_index}], Addr_index, 2'b00};
 
 ## Q6 RiscV32I
 
-在RISCV32I中，我们要完成如下这些指令
+在RISCV32I中，我们要完成如下这些指令，下面我们首先介绍一下RISCV32I的基本样貌
 
 ![image-20240119095635718](./Photo for Project introduction/image-20240119095635718.png)
 
@@ -220,13 +220,13 @@ RV32I 基本指令格式如下图图所示，RV32I 的基本指令格式只有 4
 
 上面这些格式，除 R-TYPE 外，其他的格式都需要把最高位（第 31 位）做符号扩展，以产生一个 32 位的立即数，作为指令的操作数。
 
-上图所示的这些指令格式非常规整，其操作码、源寄存器和目标寄存器总是位于相同的位置上，简化了指令解码器的设计。
-
-总的六种指令是
+上图所示的这些指令格式非常规整，其操作码、源寄存器和目标寄存器总是位于相同的位置上，简化了指令解码器的设计。总的六种指令为：
 
 ![image-20240119013410833](./Photo for Project introduction/image-20240119013410833.png)
 
+其中RISCV用Opcode来区分各类的方法，用funct3加之以funct7来特定区分不同类站之间的区别
 
+![image-20240119100651984](./Photo for Project introduction/image-20240119100651984.png)
 
 在RISCV32I当中有几个与ARM不一样的地方：
 
@@ -234,5 +234,59 @@ RV32I 基本指令格式如下图图所示，RV32I 的基本指令格式只有 4
 
 ![image-20240119001209268](./Photo for Project introduction/image-20240119001209268.png)
 
-Extend要改变、decoder大改，中间各类连线，修改ALU, 增加state_comparasion, 不用shift和condlogic
+2、在计算方法中，将shift加入了计算中，没有移位加的操作了。
+
+3、Extend module 需要比以前更复杂，因为立即数不在同一个地方，甚至顺序都是乱的。
+
+4、在立即数的拓展中，有最高位扩展（有符号），也有直接添加0扩展（无符号好）。
+
+5、在立即数操作中，有截取立即数进行操作的。
+
+6、Store和load指令更多，且需要考虑load和store大小。
+
+7、branch指令中要比较从RF中得到的值，并让PC和Imm相加。
+
+8、Jal指令中，既要写入PC+4，也要执行PC+Imm。
+
+9、Cond判断被取消
+
+等…………
+
+针对以上各类情况：
+
+我们需要做如下的改变：
+
+1、首先将RF改成32位，并将X0改成0的连线，如下图所示
+
+![image-20240119101928769](./Photo for Project introduction/image-20240119101928769.png)
+
+2、在核的外部重新排线，R1, R2, R3不再需要经过选择器，直接接入到固定的Instr位置。
+
+![image-20240119102324977](./Photo for Project introduction/image-20240119102324977.png)
+
+
+
+3、因为PC不再存在R15，所以直接将PC连到ALU的外侧，和RD1一起进行选择，选择信号ALUSrc_A由Decoder产生。
+
+4、扩展ALU的指令，将ALUcontrol扩展到12种方法，分别对应R-type的十种方法和U-type的两种方法，删除Shift模块。
+
+5、对于Condition被取消，我们也不再设立Cond Logic，对于Branch中的几种判断，专门新写一个state_compare模块进行是否运行的判断，并将Condex接入Decoder里面，近似之前的Cond Logic的用法。
+
+![image-20240119102601037](./Photo for Project introduction/image-20240119102601037.png)
+
+
+
+6、对于立即数的扩展，我们在Extend种进行判断。并对是最高位还是0填充，我们增加了ImmSrc一位位宽，用以判断用最高位还是0填充。代码如下：
+
+![image-20240119102843258](./Photo for Project introduction/image-20240119102843258.png)
+
+7、对于Jal指令，我们将RF中的PC+4引出，用以信号控制（PC4）。PC4由decoder产生，当PC4拉高的时候，通过一个选择器进入RF中。
+
+8、对于立即数操作，有截取立即数进行操作的，我们新创一个信号Imm，当它拉高的时候，截取Src_B的前五位进行操作。
+
+9、我们重新设计了Decoder的结构，增加了许多新的信号，除了上文已经提到的，我们还增加了PCsrc_direct和PCsrc做或操作判断是否处理器是否需要跳转，因为RISCV32I中有强制跳转指令。所以我们新创立了该信号。
+
+10、还有许多其他在报告中未提及的小修改处，最终我们完成了RISCV32I的设计。下面是仿真出的波形图
+
+
 

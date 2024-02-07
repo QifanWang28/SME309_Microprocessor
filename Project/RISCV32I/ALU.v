@@ -36,8 +36,8 @@ module ALU(
             4'd7: ALUResult = Real_Src_A >>> trun_B;
             4'd8: ALUResult = (Real_Src_A < Src_B)?1'b1:1'b0;
             4'd9: ALUResult = (Real_Src_A < Src_B)?1'b1:1'b0;
-            4'd10: ALUResult = Src_B << 12;
-            4'd11: ALUResult = PC + Src_B << 12;
+            4'd10: ALUResult = Src_B;
+            4'd11: ALUResult = PC + Src_B;
             default: ALUResult = 32'd0;
         endcase
     end
